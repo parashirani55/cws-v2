@@ -1,8 +1,10 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 
+type TabKey = 'monthly' | 'course' | 'courseOnly';
+
 export default function PricingTabsSection() {
-  const [activeTab, setActiveTab] = useState('monthly');
+  const [activeTab, setActiveTab] = useState<TabKey>('monthly');
   const [hasAnimated, setHasAnimated] = useState(false);
   const [typedText, setTypedText] = useState('');
   const sectionRef = useRef(null);

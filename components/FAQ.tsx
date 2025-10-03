@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState(null);
+  
 
   const faqs = [
     {
@@ -73,9 +73,12 @@ export default function FAQAccordion() {
     }
   ];
 
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+const toggleAccordion = (index: number) => {
+  setOpenIndex(openIndex === index ? null : index);
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50 py-12 px-4 sm:px-6 lg:px-8">
