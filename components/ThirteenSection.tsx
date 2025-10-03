@@ -9,8 +9,8 @@ export default function AskMeAnything() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const sectionRef = useRef(null);
-  const sliderRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
   const startXRef = useRef(0);
 
   useEffect(() => {
@@ -30,38 +30,21 @@ export default function AskMeAnything() {
     return () => observer.disconnect();
   }, []);
 
-  const handleMouseDown = (e) => {
+  // ---------------- Mouse & Touch Handlers ----------------
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setIsDragging(true);
     startXRef.current = e.clientX;
   };
 
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    startXRef.current = e.touches[0].clientX;
-  };
-
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (!isDragging || !sliderRef.current) return;
-    
+
     const slider = sliderRef.current;
     const rect = slider.getBoundingClientRect();
     const maxWidth = rect.width - 120; // Button width
     const currentX = e.clientX - rect.left - 60; // Center of button
     const newPosition = Math.max(0, Math.min(100, (currentX / maxWidth) * 100));
-    
-    setSliderPosition(newPosition);
-  };
 
-  const handleTouchMove = (e) => {
-    if (!isDragging || !sliderRef.current) return;
-    
-    const slider = sliderRef.current;
-    const rect = slider.getBoundingClientRect();
-    const maxWidth = rect.width - 120;
-    const touch = e.touches[0];
-    const currentX = touch.clientX - rect.left - 60;
-    const newPosition = Math.max(0, Math.min(100, (currentX / maxWidth) * 100));
-    
     setSliderPosition(newPosition);
   };
 
@@ -72,6 +55,25 @@ export default function AskMeAnything() {
       setSliderPosition(0);
     }
     setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    startXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (!isDragging || !sliderRef.current) return;
+
+    const slider = sliderRef.current;
+    const rect = slider.getBoundingClientRect();
+    const maxWidth = rect.width - 120;
+
+    const touch = e.touches[0];
+    const currentX = touch.clientX - rect.left - 60;
+    const newPosition = Math.max(0, Math.min(100, (currentX / maxWidth) * 100));
+
+    setSliderPosition(newPosition);
   };
 
   const handleTouchEnd = () => {
@@ -88,7 +90,7 @@ export default function AskMeAnything() {
       setSliderPosition(100);
       setIsSubmitted(true);
       setShowConfetti(true);
-      
+
       setTimeout(() => {
         setQuestion('');
         setEmail('');
@@ -102,6 +104,7 @@ export default function AskMeAnything() {
     }
   };
 
+  // ---------------- Attach/Detach Document Events ----------------
   useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
