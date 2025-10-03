@@ -33,20 +33,20 @@ export default function WhatMakesCWSDifferent() {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4 md:px-8 relative overflow-hidden"
+      className="bg-gradient-to-br from-gray-50 to-gray-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden"
     >
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#8B1538] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-20 sm:w-32 h-20 sm:h-32 bg-[#8B1538] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-24 sm:w-40 h-24 sm:h-40 bg-orange-400 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Animated Heading */}
-        <div className="text-center mb-16 relative">
-          <div className="relative inline-block">
+        {/* Animated Heading - Fully Responsive */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 relative px-2">
+          <div className="relative inline-block max-w-full">
             <h2
-              className={`text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-wide inline-block ${
+              className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight sm:tracking-wide ${
                 hasAnimated ? "animate-typing-container" : "opacity-0"
               }`}
             >
@@ -58,18 +58,18 @@ export default function WhatMakesCWSDifferent() {
           </div>
         </div>
 
-        {/* Content with a fade-in animation */}
+        {/* Content with fade-in animation */}
         <div
           className={`${
             hasAnimated ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
             {/* Left Column - Text Box */}
             <div className="order-2 md:order-1">
-              <div className="border-4 border-gray-900 bg-white p-8 md:p-10 shadow-2xl hover:shadow-3xl transition-shadow duration-300 rounded-lg">
-                <div className="space-y-6 text-center md:text-left">
-                  <p className="text-base md:text-lg leading-relaxed text-gray-800">
+              <div className="border-2 sm:border-4 border-gray-900 bg-white p-6 sm:p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg">
+                <div className="space-y-4 sm:space-y-6 text-center md:text-left">
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-800">
                     No more cookie-cutter strategies and abandoned discords.{" "}
                     <span className="font-bold text-gray-900">
                       CWS is different— built by a creator who knows growth
@@ -77,7 +77,7 @@ export default function WhatMakesCWSDifferent() {
                       support.
                     </span>
                   </p>
-                  <p className="text-base md:text-lg leading-relaxed text-gray-800">
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-800">
                     That's why CWS brings together opportunity, education,
                     mentorship, and community—all in one place. You'll find
                     free monthly resources in the Creator Hub, plus optional
@@ -93,49 +93,21 @@ export default function WhatMakesCWSDifferent() {
 
             {/* Right Column - Image */}
             <div className="order-1 md:order-2 relative">
-              {/* Text Annotation */}
-              <div className="absolute -top-16 right-0 md:right-12 text-right max-w-xs z-10 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-                <p className="text-sm md:text-base leading-tight font-medium mb-2 text-gray-800">
-                  <span className="font-bold text-gray-900">
+              {/* Text Annotation - Responsive positioning */}
+              <div className="absolute -top-8 sm:-top-12 md:-top-16 left-0 right-0 md:left-auto md:right-8 lg:right-12 mx-4 md:mx-0 max-w-xs md:max-w-sm z-10 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg">
+                <p className="text-xs sm:text-sm md:text-base leading-tight font-medium text-gray-800">
+                  <span className="font-bold text-gray-900 block mb-1">
                     The Creator Hub is a custom-built library inside CWS
                   </span>{" "}
-                  with fresh, rotating resources designed to fuel your growth
-                  and strategy!
+                  <span className="block">
+                    with fresh, rotating resources designed to fuel your growth
+                    and strategy!
+                  </span>
                 </p>
-
-                {/* Refined Curved Arrow */}
-                {/* <div className="flex justify-end">
-                  <svg
-                    width="100"
-                    height="80"
-                    viewBox="0 0 100 80"
-                    className="mr-4 animate-bounce-subtle"
-                  >
-                    <defs>
-                      <marker
-                        id="arrowhead"
-                        markerWidth="10"
-                        markerHeight="10"
-                        refX="9"
-                        refY="3"
-                        orient="auto"
-                      >
-                        <polygon points="0 0, 10 3, 0 6" fill="#8B1538" />
-                      </marker>
-                    </defs>
-                    <path
-                      d="M 10 10 Q 40 5, 60 40 T 85 70"
-                      stroke="#8B1538"
-                      strokeWidth="3"
-                      fill="none"
-                      markerEnd="url(#arrowhead)"
-                    />
-                  </svg>
-                </div> */}
               </div>
 
               {/* Creator Hub Image */}
-              <div className="relative mx-auto max-w-2xl shadow-2xl rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <div className="relative mx-auto max-w-2xl shadow-xl sm:shadow-2xl rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 mt-20 sm:mt-24 md:mt-0">
                 <Image
                   src="/mac2.png"
                   alt="Creator Hub Interface"
@@ -144,9 +116,6 @@ export default function WhatMakesCWSDifferent() {
                   className="w-full h-auto"
                 />
               </div>
-
-              {/* Decorative Plant */}
-              
             </div>
           </div>
         </div>
@@ -207,8 +176,9 @@ export default function WhatMakesCWSDifferent() {
         .animate-typing-container {
           display: inline-block;
           overflow: hidden;
-          white-space: nowrap;
-          border-right: 4px solid #8B1538;
+          white-space: normal;
+          word-wrap: break-word;
+          border-right: 3px solid #8B1538;
           max-width: 0;
           animation: typing 4s steps(40) forwards,
             blink 0.75s step-end infinite;
@@ -227,14 +197,38 @@ export default function WhatMakesCWSDifferent() {
           animation: float 3s ease-in-out infinite;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
           .animate-typing-container {
-            animation: typing 3s steps(35) forwards,
+            white-space: normal;
+            border-right: 2px solid #8B1538;
+            animation: typing 3s steps(30) forwards,
               blink 0.75s step-end infinite;
           }
 
           .animate-fade-in-up {
-            animation: fadeInUp 1s ease-out 3.2s forwards;
+            animation: fadeInUp 0.8s ease-out 3.2s forwards;
+          }
+        }
+
+        /* Tablet optimizations */
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .animate-typing-container {
+            border-right: 3px solid #8B1538;
+            animation: typing 3.5s steps(35) forwards,
+              blink 0.75s step-end infinite;
+          }
+
+          .animate-fade-in-up {
+            animation: fadeInUp 0.9s ease-out 3.7s forwards;
+          }
+        }
+
+        /* Ensure text wraps properly on small screens */
+        @media (max-width: 640px) {
+          h2 {
+            word-break: break-word;
+            hyphens: auto;
           }
         }
       `}</style>
