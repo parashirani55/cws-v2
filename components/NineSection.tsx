@@ -54,33 +54,20 @@ export default function FounderStorySection() {
         <div className="relative mt-12 md:mt-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Sneak Peek Text + Arrow */}
           <div className="flex flex-col items-start lg:items-end text-left lg:text-right relative z-20">
-            <h2 className="text-[clamp(28px,5vw,60px)] font-black text-[#8B2346] leading-[1.1] uppercase tracking-tight mb-4">
-              Sneak Peek Inside the Dashboard!
-            </h2>
-            {/* Wavy Arrow SVG */}
-            <svg
-              className="w-32 sm:w-44 md:w-52 h-auto animate-wavy"
-              viewBox="0 0 200 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 40 Q50 0, 100 40 T200 40"
-                stroke="#8B2346"
-                strokeWidth="4"
-                fill="transparent"
-                strokeLinecap="round"
-              />
-              <path d="M195 35 L205 40 L195 45" fill="#8B2346" />
-            </svg>
+            
+<img
+              src="SneakPeak.png"
+              alt="CWS Dashboard Preview"
+              className="w-full h-auto object-contain rounded-xl"
+            />
           </div>
 
           {/* Dashboard Image */}
           <div className="relative flex justify-center w-full lg:w-2/3 z-10">
             <img
-              src="/owner/dashboard-preview.png"
+              src="/owner/Dashboard-preview.png"
               alt="CWS Dashboard Preview"
-              className="w-full h-auto object-contain rounded-xl shadow-lg"
+              className="w-full h-auto object-contain rounded-xl"
             />
           </div>
         </div>

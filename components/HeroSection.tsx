@@ -21,7 +21,7 @@ function Navbar() {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-1xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 sm:py-4">
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -139,9 +139,10 @@ export default function HeroSection() {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
 <div className="text-center max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
   {/* Heading */}
-  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-2xl whitespace-nowrap">
-    An Exclusive Society for Creators
-  </h1>
+<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 drop-shadow-2xl leading-snug">
+  An Exclusive Society for Creators
+</h1>
+
 
   {/* Paragraphs */}
   <p className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug mb-4 sm:mb-5 md:mb-6 drop-shadow-2xl">
