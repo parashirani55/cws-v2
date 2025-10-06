@@ -268,7 +268,7 @@ export default function AskMeAnything() {
               <div className="relative bg-gradient-to-br from-red-900 to-red-700 rounded-3xl overflow-hidden shadow-2xl p-1 transform hover:scale-105 hover:rotate-1 transition-all duration-500">
                 <div className="bg-black rounded-3xl overflow-hidden p-3">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+                    src="/owner/Owner.png"
                     alt="Professional consultant"
                     className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl"
                   />

@@ -1,44 +1,68 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 
 export default function WhatMakesCWSDifferent() {
+  const headingRef = useRef(null);
+
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-        <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-20 sm:w-32 h-20 sm:h-32 bg-[#8B1538] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-24 sm:w-40 h-24 sm:h-40 bg-orange-400 rounded-full blur-3xl"></div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-8 sm:py-12 md:py-16 px-3 sm:px-6 md:px-8">
+      {/* ===== Background Glow Circles ===== */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-10 left-10 w-24 h-24 sm:w-32 sm:h-32 bg-[#8B1538] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-28 h-28 sm:w-40 sm:h-40 bg-orange-400 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Static Heading */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-2">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight sm:tracking-wide leading-tight">
-            <span className="text-gray-900">WHAT MAKES </span>
-            <span className="text-[#8B1538]">CWS </span>
-            <span className="text-gray-900">DIFFERENT</span>
-            <span className="text-orange-500">!?</span>
-          </h2>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* ===== Header Section ===== */}
+        <div
+          ref={headingRef}
+          className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 sm:gap-6 w-full mb-8 sm:mb-10"
+        >
+          {/* Left: Header Image */}
+          <div className="w-full text-center md:text-left">
+            <Image
+              src="/Logo/cws-diff.png"
+              alt="What Makes CWS Different!?"
+              width={1200}
+              height={420}
+              priority
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 70vw, 60vw"
+              className="w-full max-w-[280px] sm:max-w-[420px] md:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] h-auto mx-auto md:mx-0 object-contain"
+            />
+          </div>
+
+          {/* Right: Annotation (now responsive + big on mobile) */}
+          <div className="flex justify-center md:justify-end w-[70vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[20vw] mt-4 md:mt-0 mx-auto">
+            <Image
+              src="/camera/annonation.png"
+              alt="Annotation"
+              width={1000}
+              height={800}
+              priority
+              sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 55vw, 40vw"
+              className="w-full h-auto object-contain"
+            />
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Column - Text Box */}
-          <div className="order-2 md:order-1">
-            <div className="border-2 sm:border-4 border-gray-900 bg-white p-6 sm:p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg">
-              <div className="space-y-4 sm:space-y-6 text-center md:text-left">
-                <p className="text-base sm:text-lg md:text-lg leading-relaxed text-gray-800">
+        {/* ===== Content Section (Text + Mac Image) ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
+          {/* Left: Text Content */}
+          <div className="order-2 md:order-1 flex justify-center md:justify-start mt-6 md:mt-0">
+            <div className="w-full border-2 md:border-4 border-gray-900 bg-white p-5 sm:p-6 md:p-8 lg:p-10 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="text-gray-800 text-center md:text-left space-y-4 sm:space-y-5">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                   No more cookie-cutter strategies and abandoned discords.{" "}
-                  <span className="font-bold text-gray-900">
-                    CWS is different—built by a creator who knows growth takes
+                  <span className="font-semibold text-gray-900">
+                    CWS is different — built by a creator who knows growth takes
                     ongoing guidance, real answers, and hands-on support.
                   </span>
                 </p>
-                <p className="text-base sm:text-lg md:text-lg leading-relaxed text-gray-800">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                   That's why CWS brings together opportunity, education,
-                  mentorship, and community—all in one place. You'll find free
+                  mentorship, and community — all in one place. You'll find free
                   monthly resources in the Creator Hub, plus optional
                   step-by-step courses for those who want more.{" "}
                   <span className="italic text-[#8B1538] font-semibold">
@@ -50,29 +74,17 @@ export default function WhatMakesCWSDifferent() {
             </div>
           </div>
 
-          {/* Right Column - Image */}
-          <div className="order-1 md:order-2 relative mt-12 md:mt-0">
-            {/* Text Annotation */}
-            <div className="absolute -top-8 sm:-top-12 md:-top-16 left-0 right-0 md:left-auto md:right-8 lg:right-12 mx-4 md:mx-0 max-w-xs md:max-w-sm z-10 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg">
-              <p className="text-xs sm:text-sm md:text-base leading-tight font-medium text-gray-800">
-                <span className="font-bold text-gray-900 block mb-1">
-                  The Creator Hub is a custom-built library inside CWS
-                </span>{" "}
-                <span className="block">
-                  with fresh, rotating resources designed to fuel your growth
-                  and strategy!
-                </span>
-              </p>
-            </div>
-
-            {/* Creator Hub Image */}
-            <div className="relative mx-auto max-w-2xl shadow-xl sm:shadow-2xl rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          {/* Right: Mac Image */}
+          <div className="order-1 md:order-2 flex justify-center md:justify-end w-full mt-6 md:mt-0">
+            <div className="relative w-full max-w-[500px] sm:max-w-[600px] md:max-w-full rounded-t-2xl overflow-hidden">
               <Image
-                src="/mac2.png"
+                src="/camera/mac.png"
                 alt="Creator Hub Interface"
-                width={1000}
-                height={700}
-                className="w-full h-auto"
+                width={1600}
+                height={900}
+                priority
+                sizes="(max-width: 640px) 95vw, (max-width: 768px) 80vw, (max-width: 1024px) 55vw, 45vw"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>

@@ -40,35 +40,31 @@ function Navbar() {
           </div>
 
           {/* Right: Desktop Buttons */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-            <button
-              className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
-                scrolled
-                  ? "bg-red-900 text-white hover:bg-red-800"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Courses + Community
-            </button>
-            <button
-              className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
-                scrolled
-                  ? "bg-red-900 text-white hover:bg-red-800"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              About
-            </button>
-            <button
-              className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
-                scrolled
-                  ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Sign In
-            </button>
-          </div>
+          {/* Right: Desktop Buttons */}
+<div className="hidden lg:flex items-center gap-5 xl:gap-6">
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
+      bg-red-900 text-white hover:bg-red-800`}
+  >
+    Courses + Community
+  </button>
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
+      bg-red-900 text-white hover:bg-red-800`}
+  >
+    About
+  </button>
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
+      scrolled
+        ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
+        : "bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa]"
+    }`}
+  >
+    Sign In
+  </button>
+</div>
+
 
           {/* Right: Mobile Menu Button */}
           <button
@@ -98,7 +94,7 @@ function Navbar() {
           <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors">
             About
           </button>
-          <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-white text-gray-900 hover:bg-gray-100 border border-gray-300 transition-colors">
+          <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa] transition-colors">
             Sign In
           </button>
         </div>

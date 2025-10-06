@@ -4,7 +4,11 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function FAQAccordion() {
-  
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const faqs = [
     {
@@ -21,7 +25,7 @@ export default function FAQAccordion() {
     },
     {
       question: "Will I get direct access to brands inside the platform?",
-      answer: "Yes! CWS connects creators directly with brands—no more cold pitching or losing a cut to agency middlemen. Britney's team reaches out to hundreds of brands every week to find paid opportunities for creators and are posted inside the platform, so you can apply. via collaborations with brands directly (while keeping 100% of your earnings)."
+      answer: "Yes! CWS connects creators directly with brands—no more cold pitching or losing a cut to agency middlemen. Britney's team reaches out to hundreds of brands every week to find paid opportunities for creators and are posted inside the platform, so you can apply via collaborations with brands directly (while keeping 100% of your earnings)."
     },
     {
       question: "What kind of training and education does CWS offer?",
@@ -57,7 +61,7 @@ export default function FAQAccordion() {
     },
     {
       question: "How do I get brand deals through CWS?",
-      answer: "Inside your dashboard, the Opportunity Zone features paid brand deals, PR giveaways, and job listings posted directly by companies. Your custom profile and poll badges (exp you stand out and you can engage by commenting directly on brand posts. If a brand initiates contact, you'll be able to continue the conversation through direct messaging inside the platform—no gatekeeping, just real access."
+      answer: "Inside your dashboard, the Opportunity Zone features paid brand deals, PR giveaways, and job listings posted directly by companies. Your custom profile and poll badges help you stand out and you can engage by commenting directly on brand posts. If a brand initiates contact, you'll be able to continue the conversation through direct messaging inside the platform—no gatekeeping, just real access."
     },
     {
       question: "Do you offer any discounts or bundle deals?",
@@ -73,53 +77,50 @@ export default function FAQAccordion() {
     }
   ];
 
-const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-const toggleAccordion = (index: number) => {
-  setOpenIndex(openIndex === index ? null : index);
-};
-
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <section className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50 py-14 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-700 via-rose-600 to-amber-600 mb-4 italic">
+        <div className="mb-16 text-start">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-700 via-rose-600 to-amber-600 italic mb-4">
             FAQ's
           </h1>
-          <p className="text-gray-600 text-lg sm:text-xl">Everything you need to know about Creative Wealth Society</p>
+          <p className="text-gray-600 text-base sm:text-lg">
+            Everything you need to know about Creative Wealth Society
+          </p>
         </div>
 
         {/* Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-5">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              className={`rounded-2xl border border-rose-100 bg-white/80 backdrop-blur-sm transition-all duration-300 shadow-sm hover:shadow-lg ${
+                openIndex === index ? 'shadow-xl border-rose-200 scale-[1.01]' : ''
+              }`}
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-5 sm:px-8 sm:py-6 flex items-start justify-between gap-4 text-left hover:bg-rose-50 transition-colors duration-200"
+                className="w-full flex justify-between items-center text-left px-6 sm:px-8 py-5 sm:py-6 group"
               >
-                <span className="font-semibold text-gray-800 text-base sm:text-lg pr-4 leading-relaxed">
+                <span className="font-semibold text-gray-800 text-base sm:text-lg leading-relaxed group-hover:text-rose-600 transition-colors duration-200">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`flex-shrink-0 w-6 h-6 text-rose-600 transition-transform duration-300 mt-1 ${
+                  className={`w-6 h-6 text-rose-600 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
-              
+
               <div
-                className={`transition-all duration-300 ease-in-out ${
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   openIndex === index
-                    ? 'max-h-[2000px] opacity-100'
-                    : 'max-h-0 opacity-0'
+                    ? 'max-h-[2000px] opacity-100 translate-y-0'
+                    : 'max-h-0 opacity-0 -translate-y-2'
                 }`}
               >
-                <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-1">
                   <div className="h-px bg-gradient-to-r from-rose-200 via-rose-300 to-amber-200 mb-4"></div>
                   <div className="text-gray-700 leading-relaxed space-y-3 text-sm sm:text-base">
                     {faq.answer.split('\n\n').map((paragraph, pIndex) => (
@@ -133,12 +134,12 @@ const toggleAccordion = (index: number) => {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 text-sm">
-            Still have questions? Feel free to reach out to our support team!
+        <div className="mt-16 text-center">
+          <p className="text-gray-600 text-sm sm:text-base">
+            Still have questions? Feel free to reach out to our support team 💬
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

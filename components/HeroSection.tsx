@@ -41,35 +41,31 @@ function Navbar() {
           </div>
 
           {/* Desktop Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              className={`px-4 xl:px-6 py-2.5 xl:py-3 rounded-full font-semibold text-sm xl:text-base transition-colors ${
-                scrolled
-                  ? "bg-red-900 text-white hover:bg-red-800"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Courses + Community
-            </button>
-            <button
-              className={`px-4 xl:px-6 py-2.5 xl:py-3 rounded-full font-semibold text-sm xl:text-base transition-colors ${
-                scrolled
-                  ? "bg-red-900 text-white hover:bg-red-800"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              About
-            </button>
-            <button
-              className={`px-4 xl:px-6 py-2.5 xl:py-3 rounded-full font-semibold text-sm xl:text-base transition-colors ${
-                scrolled
-                  ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-                  : "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Sign In
-            </button>
-          </div>
+          {/* Right: Desktop Buttons */}
+<div className="hidden lg:flex items-center gap-5 xl:gap-6">
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
+      bg-red-900 text-white hover:bg-red-800`}
+  >
+    Courses + Community
+  </button>
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
+      bg-red-900 text-white hover:bg-red-800`}
+  >
+    About
+  </button>
+  <button
+    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
+      scrolled
+        ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
+        : "bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa]"
+    }`}
+  >
+    Sign In
+  </button>
+</div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -139,25 +135,29 @@ export default function HeroSection() {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
 <div className="text-center max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
   {/* Heading */}
-<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 drop-shadow-2xl leading-snug">
-  An Exclusive Society for Creators
-</h1>
-
+  <h1
+    className="font-[var(--font-gotham)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-1 drop-shadow-2xl leading-snug tracking-tight"
+  >
+    An Exclusive Society for Creators
+  </h1>
 
   {/* Paragraphs */}
-  <p className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug mb-4 sm:mb-5 md:mb-6 drop-shadow-2xl">
-    No More Guessing. No More Building <span className="italic font-light">Alone.</span>
+  <p className="font-[var(--font-gotham)] text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug mb-2 sm:mb-2 md:mb-0 drop-shadow-2xl tracking-tight">
+    No More Guessing. No More Building{" "}
+    <span className="italic font-light">Alone.</span>
   </p>
 
-  <p className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white leading-snug mb-8 sm:mb-10 md:mb-12 drop-shadow-2xl">
-    Just Strategy, Opportunity and Real <span className="text-white">Connection.</span>
+  <p className="font-[var(--font-gotham)] text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white leading-snug mb-8 sm:mb-10 md:mb-12 drop-shadow-2xl tracking-tight">
+    Just Strategy, Opportunity and Real{" "}
+    <span className="text-white">Connection.</span>
   </p>
 
   {/* Button */}
-  <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl">
+  <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl font-[var(--font-gotham)] tracking-wide">
     GET INSTANT ACCESS
   </button>
 </div>
+
 
 
 

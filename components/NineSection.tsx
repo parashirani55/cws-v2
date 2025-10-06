@@ -4,7 +4,8 @@ export default function FounderStorySection() {
     <section className="bg-white py-8 px-4 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Top Section - Quote and Founder Image */}
-        <div className="relative mb-12 md:mb-16 lg:mb-20">
+        <div className="relative mb-12 md:mb-16 lg:mb-0">
+
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             
             {/* Quote Box */}
@@ -51,7 +52,8 @@ export default function FounderStorySection() {
         </div>
 
         {/* Dashboard Preview with Sneak Peek */}
-        <div className="relative mt-12 md:mt-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="relative mt-1 md:mt-4 lg:mt-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
           {/* Sneak Peek Text + Arrow */}
           <div className="flex flex-col items-start lg:items-end text-left lg:text-right relative z-20">
             
@@ -63,13 +65,14 @@ export default function FounderStorySection() {
           </div>
 
           {/* Dashboard Image */}
-          <div className="relative flex justify-center w-full lg:w-2/3 z-10">
-            <img
-              src="/owner/Dashboard-preview.png"
-              alt="CWS Dashboard Preview"
-              className="w-full h-auto object-contain rounded-xl"
-            />
-          </div>
+          <div className="relative flex justify-center w-full lg:w-[85%] xl:w-[90%] z-10">
+  <img
+    src="/owner/Dashboard-preview.png"
+    alt="CWS Dashboard Preview"
+    className="w-full h-auto object-contain rounded-2xl scale-110"
+  />
+</div>
+
         </div>
 
         {/* Tailwind Wavy Animation */}

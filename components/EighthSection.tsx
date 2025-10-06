@@ -15,7 +15,8 @@ const TestimonialCarousel = () => {
       role: "UGC CREATOR + CREATIVE COORDINATOR",
       image: "/Fake-User/Female.png",
       rating: 5,
-      quote: "I'm so grateful for Britney and her incredible course! ..."
+      quote:
+        "I'm so grateful for Britney and her incredible course! She helped me build my confidence, organize my creative business, and understand how to pitch to brands effectively. I now feel like I have a roadmap to success in UGC."
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ const TestimonialCarousel = () => {
       role: "VIDEO EDITOR",
       image: "/Fake-User/male.png",
       rating: 5,
-      quote: "Britney is amazing to work with. ..."
+      quote:
+        "Britney is amazing to work with. She taught me how to structure my portfolio and communicate with clients clearly. I’ve started getting consistent projects and feel more confident in my creative direction than ever before!"
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ const TestimonialCarousel = () => {
       role: "INFLUENCER + UGC CREATOR",
       image: "/Fake-User/Female.png",
       rating: 5,
-      quote: "Britney gave me the necessary tools ..."
+      quote:
+        "Britney gave me the necessary tools to step into the UGC space with confidence. The templates, strategies, and support from her community have helped me land my first few deals and expand my personal brand."
     },
     {
       id: 4,
@@ -39,7 +42,8 @@ const TestimonialCarousel = () => {
       role: "INFLUENCER + AFFILIATE CREATOR",
       image: "/Fake-User/male.png",
       rating: 5,
-      quote: "Britney and CWS gave me the resources ..."
+      quote:
+        "Britney and CWS gave me the resources to scale my affiliate marketing and content creation journey. I now understand how to position myself, collaborate better, and grow my online presence authentically."
     },
     {
       id: 5,
@@ -47,7 +51,8 @@ const TestimonialCarousel = () => {
       role: "SOCIAL MEDIA MANAGER",
       image: "/Fake-User/Female.png",
       rating: 5,
-      quote: "The Creator Hub library is my favorite feature ..."
+      quote:
+        "The Creator Hub library is my favorite feature! It’s full of valuable insights, templates, and real-world examples that helped me level up my strategy and content planning. Highly recommend joining the CWS community!"
     },
     {
       id: 6,
@@ -55,7 +60,17 @@ const TestimonialCarousel = () => {
       role: "UGC CREATOR + DIGITAL MARKETER",
       image: "/Fake-User/Female.png",
       rating: 5,
-      quote: "Britney has been the guiding light I needed ..."
+      quote:
+        "Britney has been the guiding light I needed to refine my creative strategy and pitch process. With her mentorship, I’ve been able to increase my brand collaborations and finally feel confident charging my worth."
+    },
+    {
+      id: 7,
+      name: "Patricia",
+      role: "CONTENT CREATOR + STRATEGIST",
+      image: "/Fake-User/Female.png",
+      rating: 5,
+      quote:
+        "The CWS framework completely transformed the way I approach my creator business. From pitching to pricing and branding — every lesson has been a game changer. Britney’s approach is both inspiring and practical!"
     }
   ];
 
@@ -75,7 +90,7 @@ const TestimonialCarousel = () => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Trigger when 50% of component is visible
+      { threshold: 0.5 }
     );
 
     if (containerRef.current) {
@@ -92,24 +107,24 @@ const TestimonialCarousel = () => {
   // Auto-play when visible
   useEffect(() => {
     if (!isVisible) return;
-
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [isVisible, testimonials.length]);
 
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div ref={containerRef} className="w-full bg-white py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 overflow-hidden">
+    <div
+      ref={containerRef}
+      className="w-full bg-white py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left Side - Header */}
+          {/* Left Side */}
           <div className="w-full lg:pt-6">
-            {/* Heading */}
             <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl italic font-bold leading-[1.1] mb-6 text-left max-w-4xl">
               <span className="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent">
                 From the
@@ -120,55 +135,44 @@ const TestimonialCarousel = () => {
               </span>
             </h2>
 
-            {/* Paragraph */}
             <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic font-medium mt-4 leading-relaxed max-w-3xl text-left">
-              Get the inside scoop from creators who've<br className="hidden sm:block" />
+              Get the inside scoop from creators who've
+              <br className="hidden sm:block" />
               built, scaled, and leveled up...
             </p>
           </div>
 
-          {/* Right Side - Animated Testimonial */}
+          {/* Right Side */}
           <div className="relative w-full overflow-hidden">
             <AnimatePresence mode="wait" initial={false}>
-              <motion.div 
-                key={currentTestimonial.id} 
-                initial={{ 
-                  filter: "blur(10px)",
-                  opacity: 0
-                }}
-                animate={{ 
-                  filter: "blur(0px)",
-                  opacity: 1
-                }}
-                exit={{ 
-                  filter: "blur(10px)",
-                  opacity: 0
-                }}
-                transition={{ 
-                  duration: 0.3,
-                  ease: "easeInOut"
-                }}
+              <motion.div
+                key={currentTestimonial.id}
+                initial={{ filter: 'blur(10px)', opacity: 0 }}
+                animate={{ filter: 'blur(0px)', opacity: 1 }}
+                exit={{ filter: 'blur(10px)', opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="w-full"
               >
-                {/* Profile Image */}
+                {/* Image */}
                 <div className="relative z-20 flex justify-center lg:justify-start -mb-14 sm:-mb-16 md:-mb-20 lg:-mb-24">
-                  <div className="relative">
-                    <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 xl:w-60 xl:h-60 rounded-full overflow-hidden border-4 md:border-6 border-white bg-gray-200">
-                      <img 
-                        src={currentTestimonial.image} 
-                        alt={currentTestimonial.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                  <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 xl:w-60 xl:h-60 rounded-full overflow-hidden border-4 md:border-6 border-white bg-gray-200 shadow-lg">
+                    <img
+                      src={currentTestimonial.image}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
                 {/* Card */}
                 <div className="relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-                  <div className="bg-gradient-to-br from-red-900 to-red-800 text-white rounded-2xl relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-red-900 to-red-800 text-white rounded-2xl overflow-hidden shadow-xl">
                     <div className="p-6 sm:p-8 md:p-10 lg:p-12 pt-16 sm:pt-20 md:pt-24 lg:pt-14">
                       <div className="mb-6 md:mb-8">
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic mb-2" style={{ fontFamily: 'cursive' }}>
+                        <h3
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic mb-2"
+                          style={{ fontFamily: 'cursive' }}
+                        >
                           {currentTestimonial.name}
                         </h3>
                         <p className="text-xs sm:text-sm md:text-base font-bold tracking-widest uppercase opacity-90">
@@ -186,21 +190,33 @@ const TestimonialCarousel = () => {
 
             {/* Navigation */}
             <div className="flex justify-center lg:justify-end gap-3 mt-6">
-              <button 
-                onClick={prevSlide} 
+              <button
+                onClick={prevSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
                 aria-label="Previous testimonial"
               >
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={3}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <button 
-                onClick={nextSlide} 
+              <button
+                onClick={nextSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
                 aria-label="Next testimonial"
               >
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={3}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
