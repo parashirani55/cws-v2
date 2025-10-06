@@ -19,9 +19,8 @@ export default function Home() {
     <main>
       <HeroSection />
       <LearnMasterSection />
-<ThirdSection />
-{/* <IncomeStrategySection /> */}
-<WhatMakesCWSDifferent/>
+      <ThirdSection />
+      <WhatMakesCWSDifferent/>
       <MembershipBenefits />
       <MeetTheFounder />
       <TestimonialCarousel />

@@ -137,26 +137,28 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
-        <div className="text-center max-w-6xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl">
-            An Exclusive Society for{" "}
-            <span className="text-gray-200">Creators</span>
-          </h1>
+<div className="text-center max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+  {/* Heading */}
+  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-2xl whitespace-nowrap">
+    An Exclusive Society for Creators
+  </h1>
 
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-3 sm:mb-4 md:mb-6 leading-relaxed drop-shadow-2xl">
-            No More Guessing. No More Building{" "}
-            <span className="italic font-light">Alone.</span>
-          </p>
+  {/* Paragraphs */}
+  <p className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug mb-4 sm:mb-5 md:mb-6 drop-shadow-2xl">
+    No More Guessing. No More Building <span className="italic font-light">Alone.</span>
+  </p>
 
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-8 sm:mb-10 md:mb-12 leading-relaxed drop-shadow-2xl">
-            Just Strategy, Opportunity and Real{" "}
-            <span className="text-gray-200">Connection.</span>
-          </p>
+  <p className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white leading-snug mb-8 sm:mb-10 md:mb-12 drop-shadow-2xl">
+    Just Strategy, Opportunity and Real <span className="text-white">Connection.</span>
+  </p>
 
-          <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl">
-            GET INSTANT ACCESS
-          </button>
-        </div>
+  {/* Button */}
+  <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl">
+    GET INSTANT ACCESS
+  </button>
+</div>
+
+
 
         {/* Decorative Elements - Hidden on mobile for cleaner look */}
         <div className="hidden md:block absolute top-1/4 left-10 w-3 h-3 lg:w-4 lg:h-4 bg-white rounded-full opacity-70 animate-pulse"></div>

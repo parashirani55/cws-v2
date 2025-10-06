@@ -237,14 +237,26 @@ export default function PricingTabsSection() {
                       </div>
                     ))}
                     {/* Laptop and Phone Image */}
-                    <div className="mt-4 xs:mt-6 flex items-end justify-center gap-2 xs:gap-4 flex-wrap xs:flex-nowrap">
-                      <div className="w-5/6 xs:w-2/3">
-                        <img src="/owner/Dashboard-preview.png" alt="Dashboard on laptop" className="w-full" />
-                      </div>
-                      <div className="w-1/2 xs:w-2/10">
-                        <img src="/owner/iphone.png" alt="Mobile view" className="w-full" />
-                      </div>
-                    </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 sm:mt-6">
+  {/* Laptop Image */}
+  <div className="w-full sm:w-2/3">
+    <img
+      src="/owner/Dashboard-preview.png"
+      alt="Dashboard on laptop"
+      className="w-full h-auto object-contain"
+    />
+  </div>
+
+  {/* Mobile Image */}
+  <div className="w-1/2 sm:w-1/4">
+    <img
+      src="/owner/iphone.png"
+      alt="Mobile view"
+      className="w-full h-auto object-contain"
+    />
+  </div>
+</div>
+
                   </div>
                 )}
 
@@ -268,14 +280,26 @@ export default function PricingTabsSection() {
                       </div>
                     ))}
                     {/* Bottom Images */}
-                    <div className="mt-4 xs:mt-6 flex items-end justify-center gap-2 xs:gap-4 flex-wrap xs:flex-nowrap">
-                      <div className="w-full xs:w-2/3">
-                        <img src="/owner/macbook.png" alt="Dashboard on laptop" className="w-full" />
-                      </div>
-                      <div className="w-full xs:w-2/3">
-                        <img src="/owner/macbook2.png" alt="Mobile view" className="w-full" />
-                      </div>
-                    </div>
+                    <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+  {/* First MacBook Image */}
+  <div className="w-full sm:w-1/2">
+    <img
+      src="/owner/macbook.png"
+      alt="Dashboard on laptop"
+      className="w-full h-auto object-contain"
+    />
+  </div>
+
+  {/* Second MacBook Image */}
+  <div className="w-full sm:w-1/2">
+    <img
+      src="/owner/macbook2.png"
+      alt="Mobile view"
+      className="w-full h-auto object-contain"
+    />
+  </div>
+</div>
+
                   </div>
                 )}
 
