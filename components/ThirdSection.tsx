@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function ThirdSection() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -115,27 +115,29 @@ export default function ThirdSection() {
       )}
 
       {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-20">
-        {/* Hero Section (Logo center + Workspace right) */}
-        <div className="relative w-full flex items-center justify-between max-w-[1600px]">
-          {/* Centered Logo */}
-          <div className="absolute left-1/2 transform -translate-x-[calc(50%-10px)] flex justify-center w-full md:w-auto">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12">
+
+        {/* Hero Section: logo left, workspace right on xl+, stacked below xl */}
+        <div className="w-full flex flex-col xl:flex-row items-center justify-center xl:justify-between max-w-[1600px] mx-auto gap-10">
+          
+          {/* Logo */}
+          <div className="w-full xl:w-2/2 flex justify-center xl:justify-end">
             <img
               src="/Logo/cws.png"
               alt="Logo"
-              className="w-72 sm:w-96 md:w-[520px] lg:w-[600px] xl:w-[680px] h-auto"
+              className="w-60 sm:w-80 md:w-[500px] xl:w-[580px] 2xl:w-[650px] h-auto object-contain"
             />
           </div>
 
-          {/* Workspace (Right side) */}
+          {/* Workspace */}
           {inView && (
-            <div className="ml-auto flex justify-end items-center pr-4 md:pr-12 lg:pr-20 xl:pr-28">
-              <div className="relative w-[140px] sm:w-[180px] md:w-[220px] lg:w-[250px] xl:w-[280px] aspect-square rounded-full overflow-hidden border-8 border-white shadow-2xl">
+            <div className="w-full xl:w-1/2 flex justify-center xl:justify-end mt-6 xl:mt-0">
+              <div className="relative w-[160px] sm:w-[200px] md:w-[270px] lg:w-[310px] xl:w-[340px] aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <Image
                   src="/workspace-mockup.png"
                   alt="Workspace"
                   fill
-                  className="object-cover scale-[1.4]"
+                  className="object-cover scale-[1.45]"
                 />
               </div>
             </div>
@@ -143,19 +145,19 @@ export default function ThirdSection() {
         </div>
 
         {/* Join Button */}
-        <button className="bg-white text-black font-bold text-lg md:text-xl px-12 md:px-16 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mb-16 lg:mb-10">
+        <button className="bg-white text-black font-bold text-base sm:text-lg md:text-xl px-8 sm:px-12 md:px-16 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mt-10 sm:mt-12 md:mt-16 mb-12 lg:mb-10">
           JOIN NOW!
         </button>
 
-        {/* Profile Cards (unchanged design) */}
-        <div className="flex gap-4 sm:gap-6 items-center justify-center flex-wrap max-w-7xl">
+        {/* Profile Cards */}
+        <div className="w-full max-w-[95%] mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-8">
           {profiles.map((profile, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl w-40 sm:w-48 md:w-56 overflow-hidden transform hover:scale-105 transition-transform duration-300"
+              className="bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
             >
-              <div className="bg-gradient-to-b from-red-900 to-red-800 p-6 text-center">
-                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white mx-auto mb-3 shadow-lg">
+              <div className="bg-gradient-to-b from-red-900 to-red-800 p-5 sm:p-6 text-center">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white mx-auto mb-3 shadow-lg">
                   <Image
                     src={profile.avatar}
                     alt={profile.name}
@@ -164,7 +166,7 @@ export default function ThirdSection() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-white font-bold text-base md:text-lg">
+                <h3 className="text-white font-bold text-sm sm:text-base md:text-lg">
                   @{profile.name}
                 </h3>
                 <p className="text-white/80 text-xs flex items-center justify-center gap-1">
@@ -180,14 +182,14 @@ export default function ThirdSection() {
               </div>
 
               <div className="p-4 bg-white">
-                <div className="flex gap-2 justify-center mb-4">
+                <div className="flex flex-wrap gap-2 justify-center mb-4">
                   {profile.badges.map((badge, badgeIdx) => (
                     <div
                       key={badgeIdx}
-                      className={`${badge.bg} rounded-lg p-3 flex flex-col items-center justify-center shadow-md flex-1`}
+                      className={`${badge.bg} rounded-lg p-2 sm:p-3 flex flex-col items-center justify-center shadow-md flex-1 min-w-[80px]`}
                     >
-                      <div className="text-xl mb-1">{badge.icon}</div>
-                      <div className="text-white text-[9px] md:text-[10px] font-bold text-center leading-tight uppercase">
+                      <div className="text-lg sm:text-xl mb-1">{badge.icon}</div>
+                      <div className="text-white text-[9px] sm:text-[10px] font-bold text-center leading-tight uppercase">
                         {badge.name}
                       </div>
                     </div>
