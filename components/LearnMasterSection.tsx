@@ -17,7 +17,7 @@ export default function LearnMasterSection() {
         </div>
 
         {/* Center Content */}
-        <div className="flex-1 px-4 sm:px-8 lg:px-12 xl:px-16 text-center space-y-6 text-black flex flex-col justify-center py-10 lg:py-0">
+        <div className="flex-1 px-4 sm:px-8 lg:px-12 xl:px-16 text-start space-y-6 text-black flex flex-col justify-center py-10 lg:py-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-0">
             For those who know the game <br />
             and those <span className="italic font-light">ready</span> to learn it.
@@ -27,7 +27,7 @@ export default function LearnMasterSection() {
             This is the platform that grows with you.
           </p>
 
-          <div className="pt-4 sm:pt-8 space-y-2">
+          <div className="pt-4 sm:pt-8 space-y-2 text-center">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed font-[var(--font-gotham)] text-black max-w-4xl mx-auto">
               Learn how to turn your{" "}
               <span className="text-[#7b112a] font-bold">favourite parts of </span>
