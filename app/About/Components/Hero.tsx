@@ -121,7 +121,7 @@ export default function AboutUsHero() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="w-full h-screen bg-white flex flex-col lg:flex-row pt-[80px]">
+      <section className="w-full h-screen bg-white flex flex-col lg:flex-row pt-[64px]">
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="bg-pink-100 flex items-center justify-center p-8 sm:p-12 lg:p-12 lg:h-auto lg:self-center">
             <div className="relative ">
