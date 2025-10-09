@@ -1,4 +1,10 @@
 @import "tailwindcss";
+/* ===== Put this at the very top of globals.css ===== */
+
+
+.font-bobby {
+  font-family: 'Bobby Jones Condensed', sans-serif;
+}
 
 :root {
   --background: #ffffff;

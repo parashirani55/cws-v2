@@ -1,6 +1,8 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,13 +23,16 @@ function Navbar() {
         scrolled ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
-      {/* Full width container */}
       <div className="w-full px-6 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between py-6 sm:py-7 lg:py-8">
           {/* Left: Logo */}
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
-              <img src="/logo.png" alt="Logo-CWS" className="w-3/4 h-3/4 object-contain" />
+              <img
+                src="/logo.png"
+                alt="Logo-CWS"
+                className="w-3/4 h-3/4 object-contain"
+              />
             </div>
             <span
               className={`font-bold text-lg sm:text-2xl md:text-3xl ${
@@ -40,33 +45,33 @@ function Navbar() {
           </div>
 
           {/* Right: Desktop Buttons */}
-          {/* Right: Desktop Buttons */}
-<div className="hidden lg:flex items-center gap-5 xl:gap-6">
-  <button
-    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
-      bg-red-900 text-white hover:bg-red-800`}
-  >
-    Courses + Community
-  </button>
-  <button
-    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
-      bg-red-900 text-white hover:bg-red-800`}
-  >
-    About
-  </button>
-  <button
-    className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
-      scrolled
-        ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
-        : "bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa]"
-    }`}
-  >
-    Sign In
-  </button>
-</div>
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
+            <Link
+              href="/course-plus-community"
+              className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors bg-red-900 text-white hover:bg-red-800"
+            >
+              Courses + Community
+            </Link>
 
+            <Link
+              href="/About"
+              className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors bg-red-900 text-white hover:bg-red-800"
+            >
+              About
+            </Link>
 
-          {/* Right: Mobile Menu Button */}
+            <button
+              className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
+                scrolled
+                  ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
+                  : "bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa]"
+              }`}
+            >
+              Sign In
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`lg:hidden p-3 rounded-lg transition-colors ${
@@ -88,12 +93,22 @@ function Navbar() {
         } ${scrolled ? "bg-white" : "bg-white/95 backdrop-blur-sm"}`}
       >
         <div className="px-6 sm:px-8 py-6 space-y-4">
-          <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors">
+          <Link
+            href="/course-plus-community"
+            className="block w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors text-center"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Courses + Community
-          </button>
-          <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors">
+          </Link>
+
+          <Link
+            href="/about"
+            className="block w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors text-center"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             About
-          </button>
+          </Link>
+
           <button className="w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa] transition-colors">
             Sign In
           </button>
