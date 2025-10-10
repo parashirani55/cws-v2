@@ -63,7 +63,7 @@ function Navbar() {
             <button
               className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors ${
                 scrolled
-                  ? "bg-white text-gray-900 hover:bg-gray-100 border border-gray-300"
+                  ? "bg-white text-gray-900 hover:bg-gray-100 border border-black-300"
                   : "bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa]"
               }`}
             >

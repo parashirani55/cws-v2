@@ -30,7 +30,7 @@ export default function SecondSection() {
             key={index}
             className="relative h-[480px] flex flex-col justify-between text-center text-white rounded-lg overflow-hidden shadow-lg"
           >
-            {/* ✅ Background Image using next/image for proper rendering */}
+            {/* Background Image */}
             <div className="absolute inset-0">
               <Image
                 src={box.img}
@@ -39,25 +39,24 @@ export default function SecondSection() {
                 className="object-cover"
                 priority
               />
-              {/* ✅ Black overlay */}
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-0 bg-black/20"></div>
             </div>
 
-            {/* ✅ Foreground Content */}
+            {/* Foreground Content */}
             <div className="relative z-10 flex flex-col justify-between h-full p-6">
-              {/* Heading */}
-              <h2 className="text-2xl font-extrabold uppercase mb-6">
+              {/* Heading - Increased size */}
+              <h2 className="text-3xl md:text-4xl font-extrabold uppercase mb-6">
                 {box.title}
               </h2>
 
-              {/* Icon */}
+              {/* Icon - Increased size */}
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 flex items-center justify-center rounded-full">
+                <div className="w-32 h-32 flex items-center justify-center rounded-full">
                   <Image
                     src="/CoursesPage/Down.png"
                     alt="icon"
-                    width={100}
-                    height={100}
+                    width={128}
+                    height={128}
                     className="object-contain select-none"
                     draggable="false"
                   />
