@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Creative Wealth Society",
   description: "Empowering professionals to grow their wealth and business",
+  icons: {
+    icon: "/favicon.ico", // ✅ Path relative to /public
+  },
 };
 
 export default function RootLayout({
