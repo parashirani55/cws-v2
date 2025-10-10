@@ -77,31 +77,32 @@ function Navbar() {
       </div>
 
       {/* ===== Mobile Dropdown ===== */}
-      <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen ? "max-h-96" : "max-h-0"
-        } bg-white`}
-      >
-        <div className="px-4 sm:px-6 py-4 space-y-3">
-          <Link href="/CoursesPlusCommunity">
-            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
-              Courses + Community
-            </button>
-          </Link>
+<div
+  className={`lg:hidden transition-all duration-300 overflow-hidden ${
+    mobileMenuOpen ? "max-h-96" : "max-h-0"
+  } ${scrolled ? "bg-white" : "bg-white/95 backdrop-blur-sm"}`}
+>
+  <div className="px-4 sm:px-6 py-4 space-y-3 flex flex-col">
+    <Link href="/CoursesPlusCommunity">
+      <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
+        Courses + Community
+      </button>
+    </Link>
 
-          <Link href="/About">
-            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
-              About
-            </button>
-          </Link>
+    <Link href="/About">
+      <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
+        About
+      </button>
+    </Link>
 
-          <Link href="/signin">
-            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa] transition-colors">
-              Sign In
-            </button>
-          </Link>
-        </div>
-      </div>
+    <Link href="/signin">
+      <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-white text-gray-900 hover:bg-gray-100 border border-black-300 transition-colors">
+        Sign In
+      </button>
+    </Link>
+  </div>
+</div>
+
     </nav>
   );
 }
