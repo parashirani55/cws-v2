@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TwoTable() {
   return (
@@ -30,9 +31,11 @@ export default function TwoTable() {
           </div>
 
           <div className="flex justify-center py-4 sm:py-6 mt-auto">
+            <Link href="/Checkout">
             <button className="bg-[#c67287] text-white px-6 sm:px-10 py-2 sm:py-4 rounded-lg font-semibold hover:bg-[#b65f76] transition-colors whitespace-nowrap text-[14px] sm:text-[18px] md:text-[20px]">
               YES, I WANT THE BUNDLE!
             </button>
+            </Link>
           </div>
         </div>
 
@@ -59,9 +62,11 @@ export default function TwoTable() {
           </div>
 
           <div className="flex justify-center py-4 sm:py-6 mt-auto">
+            <Link href="/Checkout">
             <button className="bg-[#7b112a] text-white px-6 sm:px-10 py-2 sm:py-4 rounded-lg font-semibold hover:bg-[#5e0e23] transition-colors whitespace-nowrap text-[14px] sm:text-[18px] md:text-[20px]">
               YES, I WANT TO JOIN!
             </button>
+            </Link>
           </div>
         </div>
 

@@ -1,0 +1,128 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+
+
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+ <nav
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-white"
+      }`}
+    >
+      <div className="w-full flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 lg:px-10">
+        {/* ===== Left: Logo ===== */}
+        <Link href="/">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 overflow-hidden flex items-center justify-center">
+              <img
+                src="/logo.png"
+                alt="Logo-CWS"
+                className="object-contain w-full h-full"
+                draggable="false"
+                loading="lazy"
+              />
+            </div>
+            <span
+              className={`font-bold text-sm sm:text-base md:text-lg text-black transition-colors`}
+            >
+              <span className="hidden sm:inline">Creative Wealth Society</span>
+              <span className="sm:hidden">CWS</span>
+            </span>
+          </div>
+        </Link>
+
+        {/* ===== Right: Nav Buttons ===== */}
+        <div className="hidden lg:flex items-center gap-4 xl:gap-5">
+          <Link href="/CoursesPlusCommunity">
+            <button className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors">
+              Courses + Community
+            </button>
+          </Link>
+
+          <Link href="/About">
+            <button className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors">
+              About
+            </button>
+          </Link>
+
+          <Link href="/signin">
+            <button className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa] transition-colors">
+              Sign In
+            </button>
+          </Link>
+        </div>
+
+        {/* ===== Mobile Menu Button ===== */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className={`lg:hidden p-2 rounded-lg transition-colors text-gray-900 hover:bg-gray-100`}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* ===== Mobile Dropdown ===== */}
+      <div
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          mobileMenuOpen ? "max-h-96" : "max-h-0"
+        } bg-white`}
+      >
+        <div className="px-4 sm:px-6 py-4 space-y-3">
+          <Link href="/CoursesPlusCommunity">
+            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
+              Courses + Community
+            </button>
+          </Link>
+
+          <Link href="/About">
+            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-red-900 text-white hover:bg-red-800 transition-colors">
+              About
+            </button>
+          </Link>
+
+          <Link href="/signin">
+            <button className="w-full px-4 py-3 rounded-full font-semibold text-sm sm:text-base bg-[#e6d0c5] text-gray-900 hover:bg-[#d4b8aa] transition-colors">
+              Sign In
+            </button>
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default function Firstsection() {
+  
+  return (
+    <>
+      <Navbar />
+      <section className="w-full bg-white">
+        {/* Full-width Image */}
+        <div className="w-full h-[30vh] relative">
+          <Image
+            src="/CoursesPage/img-1.png"
+            alt="Author Image"
+            fill
+            className="object-contain rounded-lg"
+            draggable="false"
+          />
+        </div>
+      </section>
+    </>
+  );
+}

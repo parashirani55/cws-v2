@@ -44,7 +44,7 @@ function Navbar() {
           {/* Desktop Buttons */}
           {/* Right: Desktop Buttons */}
 <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-  <Link href="/course-plus-community">
+  <Link href="/CoursesPlusCommunity">
   <button
     className={`px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors
       bg-red-900 text-white hover:bg-red-800`}>

@@ -47,7 +47,7 @@ function Navbar() {
           {/* Right: Desktop Buttons */}
           <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             <Link
-              href="/course-plus-community"
+              href="/CoursesPlusCommunity"
               className="px-6 xl:px-8 py-3 xl:py-4 rounded-full font-semibold text-base xl:text-lg transition-colors bg-red-900 text-white hover:bg-red-800"
             >
               Courses + Community
@@ -94,7 +94,7 @@ function Navbar() {
       >
         <div className="px-6 sm:px-8 py-6 space-y-4">
           <Link
-            href="/course-plus-community"
+            href="/CoursesPlusCommunity"
             className="block w-full px-6 py-4 rounded-full font-semibold text-base sm:text-lg bg-red-900 text-white hover:bg-red-800 transition-colors text-center"
             onClick={() => setMobileMenuOpen(false)}
           >
