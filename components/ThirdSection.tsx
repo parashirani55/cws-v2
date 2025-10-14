@@ -23,14 +23,15 @@ export default function ThirdSection() {
     return () => observer.disconnect();
   }, []);
 
+  // ✅ Profile data
   const profiles = [
     {
       name: "sarahsmith",
       location: "United States",
       avatar: "/UserImages/sara.png",
       badges: [
-        { name: "CWS CREATOR", icon: "🎬", bg: "bg-red-900" },
-        { name: "UGC CREATOR", icon: "👥", bg: "bg-purple-600" },
+        { name: "/member-cards/1.png", icon: "🎬" },
+        { name: "/member-cards/2.png", icon: "👥" },
       ],
     },
     {
@@ -38,8 +39,8 @@ export default function ThirdSection() {
       location: "United Kingdom",
       avatar: "/UserImages/shelby.png",
       badges: [
-        { name: "BRAND DEALS", icon: "💡", bg: "bg-blue-400" },
-        { name: "SOCIAL MEDIA MANAGER", icon: "⚖️", bg: "bg-pink-500" },
+        { name: "/member-cards/3.png", icon: "💡" },
+        { name: "/member-cards/4.png", icon: "⚖️" },
       ],
     },
     {
@@ -47,8 +48,8 @@ export default function ThirdSection() {
       location: "Canada",
       avatar: "/UserImages/John.png",
       badges: [
-        { name: "GRAPHIC DESIGNER", icon: "✏️", bg: "bg-orange-600" },
-        { name: "VIDEO EDITOR", icon: "🎮", bg: "bg-green-600" },
+        { name: "/member-cards/5.png", icon: "🎮" },
+        { name: "/member-cards/6.png", icon: "✏️" },
       ],
     },
     {
@@ -56,8 +57,8 @@ export default function ThirdSection() {
       location: "Australia",
       avatar: "/UserImages/Janet.png",
       badges: [
-        { name: "CREATIVE DIRECTOR", icon: "🎨", bg: "bg-blue-700" },
-        { name: "SCRIPT WRITER", icon: "📝", bg: "bg-yellow-500" },
+        { name: "/member-cards/7.png", icon: "🎨" },
+        { name: "/member-cards/8.png", icon: "📝" },
       ],
     },
     {
@@ -65,18 +66,47 @@ export default function ThirdSection() {
       location: "Ireland",
       avatar: "/UserImages/lasy.png",
       badges: [
-        { name: "UGC CREATOR", icon: "👥", bg: "bg-purple-600" },
-        { name: "SOCIAL MEDIA MANAGER", icon: "📱", bg: "bg-pink-500" },
+        { name: "/member-cards/9.png", icon: "👥" },
+        { name: "/member-cards/10.png", icon: "📱" },
       ],
     },
   ];
+
+  // ✅ Reusable BadgeGrid component
+  const BadgeGrid = ({ badges }: { badges: any[] }) => (
+    <div
+      className="flex flex-wrap justify-center"
+      style={{
+        gap: "clamp(8px, 1.2vw, 12px)",
+        marginBottom: "clamp(16px, 2vh, 20px)",
+      }}
+    >
+      {badges.map((badge, i) => (
+        <div
+          key={i}
+          className="relative rounded-lg overflow-hidden flex-1 hover:scale-105 hover:shadow-xl hover:shadow-white/30 transition-all duration-300"
+          style={{
+            minWidth: "clamp(90px, 18vw, 110px)",
+            height: "clamp(70px, 10vh, 85px)",
+          }}
+        >
+          <Image
+            src={badge.name} // ✅ Correct path
+            alt={badge.icon || `badge-${i}`}
+            fill
+            className="object-contain"
+          />
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div
       ref={sectionRef}
       className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center"
     >
-      {/* Background */}
+      {/* 🌈 Background */}
       <div className="absolute inset-0">
         <Image
           src="/third-sec-bg.png"
@@ -88,7 +118,7 @@ export default function ThirdSection() {
         <div className="absolute inset-0 bg-white/40" />
       </div>
 
-      {/* Sparkles */}
+      {/* ✨ Sparkles */}
       {inView && (
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(20)].map((_, i) => (
@@ -98,11 +128,20 @@ export default function ThirdSection() {
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animation: `fadeTwinkle ${2 + Math.random() * 2}s ease forwards`,
+                animation: `fadeTwinkle ${
+                  2 + Math.random() * 2
+                }s ease forwards`,
                 animationDelay: `${Math.random() * 1.5}s`,
               }}
             >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <svg
+                style={{
+                  width: "clamp(12px, 1.5vw, 20px)",
+                  height: "clamp(12px, 1.5vw, 20px)",
+                }}
+                viewBox="0 0 20 20"
+                fill="none"
+              >
                 <path
                   d="M10 0L11.5 8.5L20 10L11.5 11.5L10 20L8.5 11.5L0 10L8.5 8.5L10 0Z"
                   fill="white"
@@ -114,98 +153,265 @@ export default function ThirdSection() {
         </div>
       )}
 
-      {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12">
-
-        {/* Hero Section: logo left, workspace right on xl+, stacked below xl */}
-        <div className="w-full flex flex-col xl:flex-row items-center justify-center xl:justify-between max-w-[1600px] mx-auto gap-10">
-          
-          {/* Logo */}
-          <div className="w-full xl:w-2/2 flex justify-center xl:justify-end">
-            <img
-              src="/Logo/cws.png"
-              alt="Logo"
-              className="w-60 sm:w-80 md:w-[500px] xl:w-[580px] 2xl:w-[650px] h-auto object-contain"
-            />
-          </div>
-
-          {/* Workspace */}
-          {inView && (
-            <div className="w-full xl:w-1/2 flex justify-center xl:justify-end mt-6 xl:mt-0">
-              <div className="relative w-[160px] sm:w-[200px] md:w-[270px] lg:w-[310px] xl:w-[340px] aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
+      {/* 🌟 Main Content */}
+      <div
+        className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen py-[4vh]"
+        style={{
+          paddingLeft: "clamp(12px, 2vw, 64px)",
+          paddingRight: "clamp(12px, 2vw, 64px)",
+        }}
+      >
+        {/* 🖼️ Hero Section */}
+        <div
+          className="w-full grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] items-center"
+          style={{ gap: "clamp(20px, 3vw, 40px)" }}
+        >
+          {/* Column 1: Empty on desktop, workspace on mobile */}
+          <div className="flex justify-center lg:justify-start">
+            {inView && (
+              <div
+                className="relative rounded-full overflow-hidden border-white shadow-2xl lg:hidden"
+                style={{
+                  width: "clamp(200px, 35vw, 450px)",
+                  height: "clamp(200px, 35vw, 450px)",
+                  borderWidth: "clamp(3px, 0.4vw, 5px)",
+                }}
+              >
                 <Image
                   src="/workspace-mockup.png"
                   alt="Workspace"
                   fill
-                  className="object-cover scale-[1.45]"
+                  className="object-cover scale-[1.5]"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Column 2: Logo Center */}
+          <div className="flex justify-center">
+            <div style={{ width: "clamp(280px, 50vw, 1200px)", height: "auto" }}>
+              <Image
+                src="/logo-2.png"
+                alt="Logo"
+                width={1000}
+                height={500}
+                priority
+                className="w-full h-auto object-contain transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Column 3: Workspace on desktop */}
+          {inView && (
+            <div className="hidden lg:flex justify-start">
+              <div
+                className="relative rounded-full overflow-hidden border-white shadow-2xl"
+                style={{
+                  width: "clamp(200px, 35vw, 450px)",
+                  height: "clamp(200px, 35vw, 450px)",
+                  borderWidth: "clamp(3px, 0.4vw, 5px)",
+                }}
+              >
+                <Image
+                  src="/workspace-mockup.png"
+                  alt="Workspace"
+                  fill
+                  className="object-cover scale-[1.5]"
                 />
               </div>
             </div>
           )}
         </div>
 
-        {/* Join Button */}
-        <button className="bg-white text-black font-bold text-base sm:text-lg md:text-xl px-8 sm:px-12 md:px-16 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mt-10 sm:mt-12 md:mt-16 mb-12 lg:mb-10">
+        {/* 🚀 Join Button */}
+        <button
+          className="bg-white text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          style={{
+            fontSize: "clamp(16px, 1.8vw, 24px)",
+            paddingLeft: "clamp(32px, 5vw, 80px)",
+            paddingRight: "clamp(32px, 5vw, 80px)",
+            paddingTop: "clamp(12px, 1.5vh, 18px)",
+            paddingBottom: "clamp(12px, 1.5vh, 18px)",
+            marginTop: "clamp(24px, 4vh, 48px)",
+            marginBottom: "clamp(24px, 4vh, 48px)",
+          }}
+        >
           JOIN NOW!
         </button>
 
-        {/* Profile Cards */}
-        <div className="w-full max-w-[95%] mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-8">
-          {profiles.map((profile, idx) => (
-            <div
-              key={idx}
-              className="bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
-            >
-              <div className="bg-gradient-to-b from-red-900 to-red-800 p-5 sm:p-6 text-center">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white mx-auto mb-3 shadow-lg">
-                  <Image
-                    src={profile.avatar}
-                    alt={profile.name}
-                    width={112}
-                    height={112}
-                    className="object-cover"
-                  />
-                </div>
-                <h3 className="text-white font-bold text-sm sm:text-base md:text-lg">
-                  @{profile.name}
-                </h3>
-                <p className="text-white/80 text-xs flex items-center justify-center gap-1">
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
+        {/* 👥 Profile Cards */}
+        <div className="w-full">
+          {/* Mobile: Scrollable */}
+          <div
+            className="lg:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+            style={{
+              gap: "clamp(16px, 3vw, 24px)",
+              paddingBottom: "clamp(16px, 2vh, 24px)",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            {profiles.map((profile, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 snap-center bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl overflow-hidden"
+                style={{ width: "clamp(260px, 70vw, 320px)" }}
+              >
+                {/* Header */}
+                <div
+                  className="bg-gradient-to-b from-red-900 to-red-800 text-center"
+                  style={{ padding: "clamp(20px, 3vh, 28px)" }}
+                >
+                  <div
+                    className="rounded-full overflow-hidden border-white mx-auto shadow-lg"
+                    style={{
+                      width: "clamp(80px, 15vw, 110px)",
+                      height: "clamp(80px, 15vw, 110px)",
+                      borderWidth: "clamp(3px, 0.5vw, 5px)",
+                      marginBottom: "clamp(12px, 1.5vh, 16px)",
+                    }}
+                  >
+                    <Image
+                      src={profile.avatar}
+                      alt={profile.name}
+                      width={112}
+                      height={112}
+                      className="object-cover w-full h-full"
                     />
-                  </svg>
-                  {profile.location}
-                </p>
-              </div>
-
-              <div className="p-4 bg-white">
-                <div className="flex flex-wrap gap-2 justify-center mb-4">
-                  {profile.badges.map((badge, badgeIdx) => (
-                    <div
-                      key={badgeIdx}
-                      className={`${badge.bg} rounded-lg p-2 sm:p-3 flex flex-col items-center justify-center shadow-md flex-1 min-w-[80px]`}
+                  </div>
+                  <h3
+                    className="text-white font-bold"
+                    style={{ fontSize: "clamp(16px, 2vw, 20px)" }}
+                  >
+                    @{profile.name}
+                  </h3>
+                  <p
+                    className="text-white/80 flex items-center justify-center"
+                    style={{
+                      fontSize: "clamp(12px, 1.5vw, 14px)",
+                      gap: "clamp(4px, 0.5vw, 6px)",
+                    }}
+                  >
+                    <svg
+                      style={{
+                        width: "clamp(12px, 1.5vw, 14px)",
+                        height: "clamp(12px, 1.5vw, 14px)",
+                      }}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                     >
-                      <div className="text-lg sm:text-xl mb-1">{badge.icon}</div>
-                      <div className="text-white text-[9px] sm:text-[10px] font-bold text-center leading-tight uppercase">
-                        {badge.name}
-                      </div>
-                    </div>
-                  ))}
+                      <path
+                        fillRule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {profile.location}
+                  </p>
                 </div>
 
-                <button className="w-full bg-black text-white font-bold py-2 rounded-full text-sm hover:bg-gray-900 transition-colors">
-                  View Profile
-                </button>
+                {/* Badges */}
+                <div className="bg-white" style={{ padding: "clamp(16px, 2vw, 20px)" }}>
+                  <BadgeGrid badges={profile.badges} />
+                  <button
+                    className="w-full bg-black text-white font-bold rounded-full hover:bg-gray-900 transition-colors"
+                    style={{
+                      fontSize: "clamp(13px, 1.8vw, 16px)",
+                      paddingTop: "clamp(10px, 1.2vh, 12px)",
+                      paddingBottom: "clamp(10px, 1.2vh, 12px)",
+                    }}
+                  >
+                    View Profile
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Desktop: Grid */}
+          <div
+            className="hidden lg:grid lg:grid-cols-5 w-full max-w-[98%] mx-auto"
+            style={{
+              gap: "clamp(20px, 2vw, 48px)",
+              marginBottom: "clamp(24px, 3vh, 32px)",
+            }}
+          >
+            {profiles.map((profile, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
+              >
+                <div
+                  className="bg-gradient-to-b from-red-900 to-red-800 text-center"
+                  style={{ padding: "clamp(16px, 2vh, 24px)" }}
+                >
+                  <div
+                    className="rounded-full overflow-hidden border-white mx-auto shadow-lg"
+                    style={{
+                      width: "clamp(70px, 6vw, 96px)",
+                      height: "clamp(70px, 6vw, 96px)",
+                      borderWidth: "clamp(2px, 0.3vw, 4px)",
+                      marginBottom: "clamp(8px, 1vh, 12px)",
+                    }}
+                  >
+                    <Image
+                      src={profile.avatar}
+                      alt={profile.name}
+                      width={112}
+                      height={112}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <h3
+                    className="text-white font-bold"
+                    style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}
+                  >
+                    @{profile.name}
+                  </h3>
+                  <p
+                    className="text-white/80 flex items-center justify-center gap-1"
+                    style={{ fontSize: "clamp(11px, 0.9vw, 12px)" }}
+                  >
+                    <svg
+                      style={{
+                        width: "clamp(10px, 1vw, 12px)",
+                        height: "clamp(10px, 1vw, 12px)",
+                      }}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {profile.location}
+                  </p>
+                </div>
+
+                <div
+                  className="bg-white"
+                  style={{ padding: "clamp(12px, 1.2vw, 16px)" }}
+                >
+                  <BadgeGrid badges={profile.badges} />
+                  <button
+                    className="w-full bg-black text-white font-bold rounded-full hover:bg-gray-900 transition-colors"
+                    style={{
+                      fontSize: "clamp(11px, 1vw, 14px)",
+                      paddingTop: "clamp(6px, 0.8vh, 8px)",
+                      paddingBottom: "clamp(6px, 0.8vh, 8px)",
+                    }}
+                  >
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Animation */}
+      {/* ✨ Keyframes */}
       <style jsx>{`
         @keyframes fadeTwinkle {
           0% {
@@ -220,6 +426,13 @@ export default function ThirdSection() {
             opacity: 0;
             transform: scale(0.5);
           }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

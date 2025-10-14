@@ -7,7 +7,7 @@ export default function WhatMakesCWSDifferent() {
   const headingRef = useRef(null);
 
   return (
-    <section className="relative overflow-visible bg-gradient-to-br from-gray-50 to-gray-100 py-[5vh] sm:py-[7vh] md:py-[10vh] px-[3vw] sm:px-[5vw] md:px-[8vw]">
+    <section className="relative overflow-visible bg-gradient-to-br from-gray-50 to-gray-100 py-[5vh] px-[2vw]">
       {/* Background Glow Circles */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-[5vh] left-[5vw] w-[6vw] h-[6vw] sm:w-[8vw] sm:h-[8vw] bg-[#8B1538] rounded-full blur-3xl"></div>
@@ -16,29 +16,26 @@ export default function WhatMakesCWSDifferent() {
 
       <div className="relative z-10 max-w-[100vw] mx-auto">
         {/* Header Section */}
-        <div
-          ref={headingRef}
-          className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-[2vw] sm:gap-[3vw] w-full"
-        >
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-[10px] w-full">
           {/* Left: Header Image */}
-          <div className="w-full md:flex-1 lg:flex-[0_0_calc(60vw)]">
+          <div className="w-full md:flex-1 lg:flex-[0_0_calc(66vw)]">
             <Image
-              src="/camera/cws-diff.png"
+              src="/testi-img/annonation.svg"
               alt="What Makes CWS Different!?"
-              width={1920}
+              width={1800}
               height={600}
               priority
-              className="w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[50vw] h-auto object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
 
           {/* Right: Spacer for overlay */}
-          <div className="hidden md:block lg:w-[20vw]"></div>
+          <div className="hidden md:block lg:w-[10vw]"></div>
         </div>
 
         {/* Mobile Annotation (<768px) */}
         <div className="block md:hidden mt-[2vh] flex justify-center w-full">
-          <div className="w-[70vw] sm:w-[60vw] mx-auto">
+          <div className="w-full mx-auto">
             <Image
               src="/camera/annonation.png"
               alt="Annotation"
@@ -51,19 +48,19 @@ export default function WhatMakesCWSDifferent() {
         </div>
 
         {/* Content Section (Text + Mac Image) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[3vw] sm:gap-[4vw] md:gap-[5vw] items-center mt-[3vh]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] items-center mt-[3vh]">
           {/* Left: Text */}
           <div className="order-2 md:order-1 flex justify-center md:justify-start">
-            <div className="w-full border-2 md:border-4 border-gray-900 bg-white p-[2vw] sm:p-[2.5vw] md:p-[3vw] rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="w-full border-2 md:border-4 border-gray-900 bg-white p-[2vw] rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="text-gray-800 text-center md:text-left space-y-[1vh] sm:space-y-[1.5vh]">
-                <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.2vw] leading-relaxed">
+                <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.3vw] leading-relaxed">
                   No more cookie-cutter strategies and abandoned discords.{" "}
                   <span className="font-semibold text-gray-900">
                     CWS is different — built by a creator who knows growth takes
                     ongoing guidance, real answers, and hands-on support.
                   </span>
                 </p>
-                <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.2vw] leading-relaxed">
+                <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.3vw] leading-relaxed">
                   That's why CWS brings together opportunity, education,
                   mentorship, and community — all in one place. You'll find free
                   monthly resources in the Creator Hub, plus optional
@@ -80,7 +77,7 @@ export default function WhatMakesCWSDifferent() {
           {/* Right: Mac + annotation */}
           <div className="order-1 md:order-2 flex justify-center md:justify-end w-full relative mt-[3vh] md:mt-0">
             {/* Mac container */}
-            <div className="relative w-[80vw] sm:w-[65vw] md:w-[50vw] lg:w-[40vw] xl:w-[35vw] rounded-t-2xl">
+            <div className="relative w-[90vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] xl:w-[55vw] rounded-t-2xl">
               <Image
                 src="/camera/mac.png"
                 alt="Creator Hub Interface"
@@ -92,22 +89,26 @@ export default function WhatMakesCWSDifferent() {
             </div>
 
             {/* Annotation Overlay: Tablet+ only (>=768px) */}
-<div className="hidden md:flex absolute z-30" style={{
-  top: '-45vh',           // adjust as needed
-  right: '-20vh',       // float slightly outside Mac image
-  width: 'auto',      
-  maxWidth: '100%',   // don't overflow container
-  transform: 'scale(0.5)', // make it bigger visually
-}}>
-  <Image
-    src="/camera/annonation.png"
-    alt="Annotation"
-    width={700}
-    height={460}
-    priority
-    className="h-auto object-contain select-none pointer-events-none"
-  />
-</div>
+            {/* Annotation Overlay: Tablet+ only (>=768px) */}
+            <div
+              className="hidden md:flex absolute z-30"
+              style={{
+                top: '-39vh',       // moved higher
+                right: '-14vh',
+                width: 'auto',
+                maxWidth: '100%',
+                transform: 'scale(0.6)',  // made slightly smaller
+              }}
+            >
+              <Image
+                src="/testi-img/annonation-arrow.svg"
+                alt="Annotation"
+                width={650}
+                height={460}
+                priority
+                className="h-auto object-contain select-none pointer-events-none"
+              />
+            </div>
 
           </div>
         </div>

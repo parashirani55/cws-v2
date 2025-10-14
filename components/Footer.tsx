@@ -1,20 +1,20 @@
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 mb-8">
+    <footer className="bg-white border-t border-gray-200 w-full">
+      <div className="max-w-full mx-auto px-4 sm:px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-8">
           {/* Logo Section */}
           <div className="flex flex-col items-start">
             <img 
               src="/footer/image.png" 
               alt="Creative Wealth Society" 
-              className="w-48 h-auto object-contain"
+              className="w-56 sm:w-64 h-auto object-contain"
             />
           </div>
 
           {/* Navigate Section */}
           <div>
-            <h4 className="text-xl font-bold text-gray-800 mb-4">Navigate</h4>
+            <h4 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mb-4">Navigate</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-600 hover:text-rose-700 transition-colors">Courses + Community</a></li>
               <li><a href="#" className="text-gray-600 hover:text-rose-700 transition-colors">About</a></li>
@@ -25,26 +25,26 @@ export default function Footer() {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-xl font-bold text-gray-800 mb-4">Contact</h4>
+            <h4 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mb-4">Contact</h4>
             <div className="space-y-4">
               <a href="mailto:hello@creativewealthsociety.com" className="flex items-center gap-2 text-gray-600 hover:text-rose-700 transition-colors">
                 <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span className="text-sm break-words">hello@creativewealthsociety.com</span>
+                <span className="text-sm sm:text-base break-words">hello@creativewealthsociety.com</span>
               </a>
               <div className="pt-2">
-                <p className="text-gray-600 text-sm mb-2">For Brands or Businesses,</p>
-                <a href="#" className="text-blue-600 hover:text-blue-700 underline text-sm font-medium">Access Here</a>
+                <p className="text-gray-600 text-sm sm:text-base mb-2">For Brands or Businesses,</p>
+                <a href="#" className="text-blue-600 hover:text-blue-700 underline text-sm sm:text-base font-medium">Access Here</a>
               </div>
             </div>
           </div>
 
           {/* Connect Section */}
           <div>
-            <h4 className="text-xl font-bold text-gray-800 mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <h4 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mb-4">Connect</h4>
+            <div className="flex gap-3 sm:gap-4">
               <a href="#" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-200 pt-6">
-          <div className="flex flex-wrap gap-3 justify-center mb-4 text-xs sm:text-sm text-gray-600">
+          <div className="flex flex-wrap gap-4 sm:gap-9 justify-start mb-4 text-xs sm:text-sm text-gray-600">
             <a href="#" className="hover:text-rose-700 transition-colors whitespace-nowrap">Terms of Service</a>
             <span className="text-gray-300">|</span>
             <a href="#" className="hover:text-rose-700 transition-colors whitespace-nowrap">Privacy Statement</a>
@@ -78,7 +78,7 @@ export default function Footer() {
             <span className="text-gray-300">|</span>
             <a href="#" className="hover:text-rose-700 transition-colors whitespace-nowrap">Earnings Disclaimer</a>
           </div>
-          <p className="text-center text-sm text-gray-600">© 2025 All Rights Reserved</p>
+          <p className="text-left text-sm text-gray-600">© 2025 All Rights Reserved</p>
         </div>
       </div>
     </footer>

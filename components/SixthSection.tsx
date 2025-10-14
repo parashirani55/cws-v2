@@ -50,7 +50,7 @@ const MembershipBenefits = () => {
       id: 7,
       title: "Contests + Leaderboard Rewards",
       description: "Earn points, join fun creator challenges, and get featured weekly to showcase your profile for top brand visibility and hiring opportunities.",
-      bgColor: "bg-purple-100",
+      bgColor: "bg-pink-100",
       highlighted: true,
       icon: "/membership/7.png"
     },
@@ -58,7 +58,7 @@ const MembershipBenefits = () => {
       id: 8,
       title: "Monthly Mastermind Sessions",
       description: "Founder-led exclusive video sessions featuring expert insights, industry leader interviews, and Q&As pulled directly from questions posted in the community. Topics you vote on are explored in every session to help you learn, build, and grow your business.",
-      bgColor: "bg-purple-100",
+      bgColor: "bg-pink-100",
       highlighted: true,
       icon: "/membership/8.png"
     },
@@ -113,7 +113,7 @@ const MembershipBenefits = () => {
               key={benefit.id}
               className={`group flex gap-5 p-6 rounded-2xl transition-all duration-500 ease-in-out ${
                 benefit.highlighted 
-                  ? 'hover:border-4 hover:border-purple-600 hover:shadow-2xl hover:shadow-purple-200' 
+                  ? 'hover:border-4 hover:border-red-900 hover:shadow-2xl hover:shadow-red-200' 
                   : 'hover:border-4 hover:border-red-900 hover:shadow-2xl hover:shadow-red-100'
               }`}
             >

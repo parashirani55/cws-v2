@@ -36,7 +36,7 @@ function Navbar() {
                 scrolled ? "text-gray-900" : "text-white drop-shadow-lg"
               }`}
             >
-              <span className="hidden sm:inline">Creative Wealth Society</span>
+              <span className="hidden sm:inline text-black font-canva-sans-regular">Creative Wealth Society</span>
               <span className="sm:hidden">CWS</span>
             </span>
           </div>
@@ -146,25 +146,28 @@ export default function HeroSection() {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
 <div className="text-center max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
   {/* Heading */}
-  <h1
-    className="font-[var(--font-gotham)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-1 drop-shadow-2xl leading-snug tracking-tight"
-  >
-    An Exclusive Society for Creators
-  </h1>
+<h1
+  className="text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-[9rem] font-gotham-bold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)] text-white mb-1 drop-shadow-2xl leading-[normal] tracking-tight whitespace-normal md:whitespace-nowrap"
+>
+  An Exclusive Society for Creators
+</h1>
 
-  {/* Paragraphs */}
-  <p className="font-[var(--font-gotham)] text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug mb-2 sm:mb-2 md:mb-0 drop-shadow-2xl tracking-tight">
-    No More Guessing. No More Building{" "}
-    <span className="italic font-light">Alone.</span>
-  </p>
 
-  <p className="font-[var(--font-gotham)] text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-white leading-snug mb-8 sm:mb-10 md:mb-12 drop-shadow-2xl tracking-tight">
-    Just Strategy, Opportunity and Real{" "}
-    <span className="text-white">Connection.</span>
-  </p>
+{/* Paragraphs */}
+<p className="font-gotham-regular text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] font-semibold text-white leading-[normal] mb-2 sm:mb-2 md:mb-0 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)] tracking-tight">
+  No More Guessing. No More Building{" "}
+  <span className="italic font-light">Alone.</span>
+</p>
+
+<p className="font-gotham-regular text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] font-semibold text-white leading-[normal] mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)] tracking-tight">
+  Just Strategy, Opportunity and Real{" "}
+  <span className="text-white">Connection.</span>
+</p>
+
+
 
   {/* Button */}
-  <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl font-[var(--font-gotham)] tracking-wide">
+  <button className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 bg-red-900 text-white text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-red-800 transition-all transform hover:scale-105 shadow-2xl  tracking-wide">
     GET INSTANT ACCESS
   </button>
 </div>
