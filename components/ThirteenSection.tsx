@@ -10,7 +10,7 @@ export default function AskMeAnythingSimple() {
         {/* Right Side: Heading + Form */}
         <div className="flex-1 flex flex-col justify-start items-start">
           {/* Heading */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold italic text-start text-[#7b112a] mb-6 leading-tight ">
+          <h2 className="font-gotham-bold text-5xl md:text-6xl lg:text-7xl font-bold italic text-start text-[#7b112a] mb-6 leading-tight ">
             Ask Me Anything
           </h2>
 
