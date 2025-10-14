@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: "Larken_Black_Italic";
-  src: url("/fonts/fonnts.com-Larken_ExtraBold_Italic.otf") format("woff2");
+  src: url("/fonts/fonnts.com-Larken_ExtraBold_Italic.otf") format("otf");
   font-weight: 800;
   font-display: swap;
 }

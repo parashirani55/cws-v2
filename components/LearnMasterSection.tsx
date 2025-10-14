@@ -7,7 +7,7 @@ export default function LearnMasterSection() {
     <div className="bg-[#f4f0f0] min-h-[50vh] flex flex-col">
 
   {/* Main Content Section */}
-  <div className="w-full flex flex-col lg:flex-row items-stretch h-[50vh] lg:h-[60vh] xl:h-[70vh]">
+  <div className="w-full flex flex-col lg:flex-row items-stretch h-[50vh] lg:h-[50vh] xl:h-[50vh]">
     {/* Left Image */}
     <div className="lg:w-1/4 relative flex justify-center lg:justify-start pt-4 pb-0 pl-5 lg:pl-0">
   <img
