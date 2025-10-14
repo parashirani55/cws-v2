@@ -1,38 +1,32 @@
 @import "tailwindcss";
 
-/* ===== Gotham Fonts ===== */
-
+/* ===== Canva Sans ===== */
 @font-face {
   font-family: "canva sans";
-  src: url("/fonts/canva-sans-regular.otf") format("otf");
+  src: url("/fonts/canva-sans-regular.woff2") format("woff2"),
+       url("/fonts/canva-sans-regular.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-
+/* ===== Larken Black Italic ===== */
 @font-face {
   font-family: "Larken_Black_Italic";
-  src: url("/fonts/fonnts.com-Larken_ExtraBold_Italic.otf") format("otf");
+  src: url("/fonts/fonnts.com-Larken_Black_Italic.woff2") format("woff2"),
+       url("/fonts/fonnts.com-Larken_Black_Italic.otf") format("opentype");
   font-weight: 800;
-  font-display: swap;
-}
-
-.font-Larken-Black-Italic {
-  font-family: var(--font-Larken_Black_Italic);
-  font-weight: 800; /* matches your @font-face */
   font-style: italic;
+  font-display: swap;
 }
 
 /* ===== CSS Variables ===== */
 :root {
-  /* Fonts */
   --font-gotham-regular: "Gotham Condensed", sans-serif;
   --font-gotham-bold: "Gotham Condensed", sans-serif;
   --font-canva-sans-regular: "canva sans", sans-serif;
   --font-Larken_Black_Italic: "Larken_Black_Italic", sans-serif;
 
-  /* Colors */
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -43,11 +37,11 @@ body {
   padding: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif; /* Default font for whole page */
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
 
-/* ===== Utility Classes for Specific Text ===== */
+/* ===== Utility Classes ===== */
 .font-gotham-regular {
   font-family: var(--font-gotham-regular);
   font-weight: 400;
@@ -56,4 +50,10 @@ body {
 .font-gotham-bold {
   font-family: var(--font-gotham-bold);
   font-weight: 700;
+}
+
+.font-Larken-Black-Italic {
+  font-family: "Larken_Black_Italic", sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
