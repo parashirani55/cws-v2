@@ -191,7 +191,7 @@ export default function ThirdSection() {
           <div className="flex justify-center">
             <div style={{ width: "clamp(280px, 50vw, 1200px)", height: "auto" }}>
               <Image
-                src="/logo-2.png"
+                src="/Logo/logo-2.png"
                 alt="Logo"
                 width={1000}
                 height={500}
@@ -204,40 +204,42 @@ export default function ThirdSection() {
           {/* Column 3: Workspace on desktop */}
           {inView && (
             <div className="hidden lg:flex justify-start">
-              <div
-                className="relative rounded-full overflow-hidden border-white shadow-2xl"
-                style={{
-                  width: "clamp(200px, 35vw, 450px)",
-                  height: "clamp(200px, 35vw, 450px)",
-                  borderWidth: "clamp(3px, 0.4vw, 5px)",
-                }}
-              >
-                <Image
-                  src="/workspace-mockup.png"
-                  alt="Workspace"
-                  fill
-                  className="object-cover scale-[1.5]"
-                />
-              </div>
-            </div>
+  <div
+    className="relative rounded-full overflow-hidden border-white shadow-2xl"
+    style={{
+      width: "clamp(160px, 25vw, 360px)",   // reduced
+      height: "clamp(160px, 25vw, 360px)",  // reduced
+      borderWidth: "clamp(2px, 0.3vw, 4px)", // slightly thinner
+    }}
+  >
+    <Image
+      src="/workspace-mockup.png"
+      alt="Workspace"
+      fill
+      className="object-cover scale-[1.3]" // slightly smaller scale
+    />
+  </div>
+</div>
+
           )}
         </div>
 
         {/* 🚀 Join Button */}
         <button
-          className="bg-white text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          style={{
-            fontSize: "clamp(16px, 1.8vw, 24px)",
-            paddingLeft: "clamp(32px, 5vw, 80px)",
-            paddingRight: "clamp(32px, 5vw, 80px)",
-            paddingTop: "clamp(12px, 1.5vh, 18px)",
-            paddingBottom: "clamp(12px, 1.5vh, 18px)",
-            marginTop: "clamp(24px, 4vh, 48px)",
-            marginBottom: "clamp(24px, 4vh, 48px)",
-          }}
-        >
-          JOIN NOW!
-        </button>
+  className="bg-white text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+  style={{
+    fontSize: "clamp(16px, 1.8vw, 24px)",
+    paddingLeft: "clamp(32px, 5vw, 80px)",
+    paddingRight: "clamp(32px, 5vw, 80px)",
+    paddingTop: "clamp(12px, 1.5vh, 18px)",
+    paddingBottom: "clamp(12px, 1.5vh, 18px)",
+    marginTop: "clamp(-20px, -9vw, -90px)", // responsive negative top margin
+    marginBottom: "clamp(60px, 8vw, 120px)",   // responsive bottom margin
+  }}
+>
+  JOIN NOW!
+</button>
+
 
         {/* 👥 Profile Cards */}
         <div className="w-full">

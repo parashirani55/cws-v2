@@ -135,7 +135,7 @@ export default function HeroSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/hero_video.mov" type="video/mp4" />
+        <source src="/hero_video.webm" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
