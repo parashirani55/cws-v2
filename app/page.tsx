@@ -6,10 +6,10 @@ import LearnMasterSection from '@/components/LearnMasterSection';
 import ThirdSection from '@/components/ThirdSection';
 import WhatMakesCWSDifferent from '@/components/FifthSection';
 import MembershipBenefits from '@/components/SixthSection';
-import MeetTheFounder from '@/components/SeventhSection';
+// import MeetTheFounder from '@/components/SeventhSection';
 import TestimonialCarousel from '@/components/EighthSection';
-// import FounderStorySection from '@/components/NineSection';
-import FounderSection from '@/components/NineSection';
+import FounderStorySection from '@/components/NineSection';
+import FounderSection from '@/components/SeventhSection';
 import PricingTabsSection from '@/components/tenthSection';
 import FoundersCircleSection from '@/components/ElevenSection';
 import OnlineIncomeLanding from '@/components/TwelveSection';
@@ -86,10 +86,10 @@ export default function Home() {
         <div className="section-wrapper"><ThirdSection /></div>
         <div className="section-wrapper"><WhatMakesCWSDifferent /></div>
         <div className="section-wrapper"><MembershipBenefits /></div>
-        <div className="section-wrapper"><MeetTheFounder /></div>
-        <div className="section-wrapper"><TestimonialCarousel /></div>
-        {/* <div className="section-wrapper"><FounderStorySection /></div> */}
+        {/* <div className="section-wrapper"><MeetTheFounder /></div> */}
         <div className="section-wrapper"><FounderSection /></div>
+        <div className="section-wrapper"><TestimonialCarousel /></div>
+        <div className="section-wrapper"><FounderStorySection /></div>
         <div className="section-wrapper"><PricingTabsSection /></div>
         <div className="section-wrapper"><FoundersCircleSection /></div>
         <div className="section-wrapper"><OnlineIncomeLanding /></div>

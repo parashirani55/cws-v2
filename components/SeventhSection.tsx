@@ -1,234 +1,94 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Briefcase, Heart, TrendingUp, Award, Users, ArrowRight } from 'lucide-react';
+import React from 'react';
 
-const FounderProfileCard = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
+export default function FounderSection() {
+return (
+<section className="bg-gradient-to-br from-pink-100 via-pink-50 to-pink-100 py-8 md:py-12 lg:py-16 overflow-hidden">
+<div className="grid grid-cols-1 lg:grid-cols-[300px_400px_1fr] gap-0 w-full px-4 lg:px-10">
 
-  const stats = [
-    { icon: Briefcase, label: 'Brand Deals', value: '150+' },
-    { icon: TrendingUp, label: 'Revenue', value: '6-Fig' },
-    { icon: Users, label: 'Students', value: '1000+' },
-    { icon: Award, label: 'Success Rate', value: '95%' }
-  ];
+{/* 1st Grid - Left Column - Polaroid Images */}
+<div className="flex flex-col items-end space-y-6 relative z-10">
+<div className="mb-2">
+<img
+src="/camera/MeetTheFounder.svg"
+alt="Meet the Founder"
+className="w-full max-w-[30.875rem]"
+/>
+</div>
 
-  return (
-    <div className="min-h-screen bg-pink-50 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-12 flex items-center justify-center">
-      <div className="w-full max-w-6xl">
-        {/* Main Profile Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative"
-        >
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden border border-pink-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              
-              {/* Left Side - Image Section */}
-              <div className="relative p-6 sm:p-8 md:p-10 flex items-center justify-center bg-pink-100 order-1">
-                <div className="relative z-10 w-full max-w-sm">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                    className="relative"
-                  >
-                    {/* Profile Image - Responsive sizing */}
-                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 mx-auto">
-                      <div className="absolute inset-0 bg-pink-200 rounded-full" />
-                      <div className="absolute inset-2 bg-white rounded-full overflow-hidden shadow-md">
-                        <img
-                          src="/2.png"
-                          alt="Britney - Founder"
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
+<div className="relative h-[40rem] w-full flex flex-col justify-end items-end gap-10">
+<div className="w-[12.5rem] bg-white p-2 shadow-xl transform -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300">
+<img src="/camera/2.png" alt="Camera" className="w-full h-full object-cover" />
+</div>
+<div className="w-[12.5rem] bg-white p-2 shadow-xl transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300">
+<img src="/camera/1.png" alt="Professional" className="w-full h-full object-cover" />
+</div>
+<div className="w-[11.25rem] bg-white p-2 shadow-xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300">
+<img src="/camera/3.png" alt="Beach" className="w-full h-full object-cover" />
+</div>
+</div>
+</div>
 
-                    {/* Floating Polaroid 1 - Responsive positioning */}
-                    <motion.div
-                      initial={{ opacity: 0, y: -15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2, duration: 0.4 }}
-                      whileHover={{ scale: 1.05, rotate: 0 }}
-                      className="absolute -top-4 -left-2 sm:-top-6 sm:-left-4 md:-left-6 bg-white p-1.5 sm:p-2 shadow-md rounded-lg border border-pink-100 rotate-[-8deg]"
-                    >
-                      <img
-                        src="/camera/2.png"
-                        alt="Camera moment"
-                        className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover rounded"
-                      />
-                      <Camera className="w-3 h-3 sm:w-4 sm:h-4 mx-auto mt-1 text-pink-500" />
-                    </motion.div>
+{/* 2nd Grid - Center Column - Main Founder Image */}
 
-                    {/* Floating Polaroid 2 - Responsive positioning */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3, duration: 0.4 }}
-                      whileHover={{ scale: 1.05, rotate: 0 }}
-                      className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 md:-right-6 bg-white p-1.5 sm:p-2 shadow-md rounded-lg border border-pink-100 rotate-[8deg]"
-                    >
-                      <img
-                        src="/camera/3.png"
-                        alt="Beach moment"
-                        className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover rounded"
-                      />
-                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 mx-auto mt-1 text-red-500 fill-current" />
-                    </motion.div>
+<div className="relative flex items-start justify-center lg:justify-center lg:-ml-16 lg:-mr-20 z-31">
+<div className="relative pt-12">
+<img
+src="/Founder.png"
+alt="Britney - Founder"
+className="w-full max-w-[40rem] sm:max-w-[44rem] lg:max-w-[50rem] xl:max-w-[52rem] h-auto object-contain"
+/>
+</div>
+</div>
 
-                    {/* Floating Polaroid 3 - Hidden on small screens */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4, duration: 0.4 }}
-                      whileHover={{ scale: 1.05, rotate: 0 }}
-                      className="absolute top-1/2 -left-6 sm:-left-8 md:-left-10 bg-white p-1.5 sm:p-2 shadow-md rounded-lg border border-pink-100 rotate-[-12deg] hidden sm:block"
-                    >
-                      <img
-                        src="/camera/1.png"
-                        alt="Professional"
-                        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover rounded"
-                      />
-                    </motion.div>
-                  </motion.div>
-                </div>
-              </div>
 
-              {/* Right Side - Content Section */}
-              <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-between order-2">
-                <div>
-                  <h2 className="text-xs sm:text-sm font-semibold text-pink-600 uppercase mb-2 tracking-wide">
-                    Meet the Founder
-                  </h2>
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-                    Britney
-                  </h1>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-                    From Zero to 6-Figures Creator
-                  </p>
+{/* 3rd Grid - Right Column */}
+<div className="relative flex flex-col lg:-ml-4">
 
-                  {/* Stats Grid - Responsive */}
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                    {stats.map((stat, index) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05, duration: 0.3 }}
-                        whileHover={{ y: -2 }}
-                        className="bg-pink-50 p-3 sm:p-4 rounded-lg sm:rounded-xl shadow-sm border border-pink-100"
-                      >
-                        <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 mb-1 sm:mb-2" />
-                        <p className="text-lg sm:text-xl font-bold text-gray-900">{stat.value}</p>
-                        <p className="text-[10px] sm:text-xs text-gray-600">{stat.label}</p>
-                      </motion.div>
-                    ))}
-                  </div>
+{/* Title */}
+<div className="bg-gradient-to-r from-[#f8d5dd] to-[#fce4e9] text-[#84092a] px-8 py-6 rounded-tl-[2rem]">
+<h2 className="text-[1.8em] sm:text-[2em] md:text-[2.3em] lg:text-[2.8em] font-bold leading-tight">
+From Zero to 6-Figures <span className="text-black">→</span>
+</h2>
+<p className="text-[1.6em] sm:text-[1.8em] md:text-[2em] lg:text-[2.4em] font-bold italic leading-tight mt-1">
+Now It's <span className="italic">Your Turn.</span>
+</p>
+</div>
 
-                  {/* Description - Responsive text */}
-                  <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700">
-                    <p className="leading-relaxed">
-                      After the pandemic shut down my workplace, I started with nothing but an iPhone and determination. 
-                      <span className="font-semibold text-pink-600"> 150+ UGC brand deals later</span>, I built a 
-                      <span className="font-bold text-purple-600"> 6-figure online business</span> from home.
-                    </p>
-                    <p className="leading-relaxed">
-                      Now I teach creators how to stop undercharging, land high-paying clients, and build 
-                      <span className="italic"> multiple income streams</span> that support the life they want.
-                    </p>
-                  </div>
-                </div>
+{/* Main Content */}
+<div className="bg-gradient-to-b from-[#84092a] to-[#6d0724] text-white pl-16 sm:pl-20 md:pl-24 lg:pl-32 pr-8 py-8 pb-20 space-y-6 flex-grow max-w-full lg:w-[60vw] z-3">
+<p className="text-[1.1em] sm:text-[1.2em] md:text-[1.3em] lg:text-[1.4em] leading-relaxed">
+<span className="font-bold">Welcome!</span> My name is Britney and I'm SO glad you're here! So, here's what happened...
+</p>
+<p className="text-[1.1em] sm:text-[1.2em] md:text-[1.3em] lg:text-[1.4em] leading-relaxed">
+After the pandemic shut down the place I worked for pretty much my entire 20s, I started with nothing but an iPhone and the drive to build reliable income and long-term stability—<span className="italic font-semibold">on my own terms.</span>
+</p>
+<p className="text-[1.1em] sm:text-[1.2em] md:text-[1.3em] lg:text-[1.4em] leading-relaxed">
+Fast-forward 150+ UGC brand deals later, I realized content creation was just the beginning. I wanted more—more income, more freedom, and more control over my time. So I built a <span className="font-bold">6-figure online business</span> from home, combining creative strategy, client work, UGC, digital products and more to create multiple income streams.
+</p>
+<p className="text-[1.1em] sm:text-[1.2em] md:text-[1.3em] lg:text-[1.4em] leading-relaxed">
+Inside CWS, I teach exactly how I did it so you can stop undercharging, land high-paying clients, and grow a creative business that supports the life you actually want.
+</p>
+</div>
 
-                {/* CTA Buttons - Responsive */}
-                <div className="space-y-3 sm:space-y-4 mt-6 sm:mt-8">
-                  <motion.button
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
-                    transition={{ duration: 0.1 }}
-                    className="w-full bg-pink-500 text-white py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg shadow-sm hover:bg-pink-600 transition-colors flex items-center justify-center gap-2"
-                  >
-                    Join CWS Now
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.button>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
-                    transition={{ duration: 0.1 }}
-                    onClick={() => setIsFlipped(!isFlipped)}
-                    className="w-full bg-white border-2 border-pink-300 text-pink-600 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-pink-50 transition-colors"
-                  >
-                    Read Full Story
-                  </motion.button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+{/* CTA Overlapping the 2nd Container */}
+<div className="bg-gradient-to-br from-pink-200 via-pink-100 to-purple-100 px-14 py-10 rounded-[2rem] shadow-2xl -mt-24 lg:-mt-15 -ml-8 lg:-ml-50 lg:mr-8 z-30 w-full max-w-[90%] mx-auto text-center z-32">
+<p className="text-[1.2em] sm:text-[1.3em] md:text-[1.4em] lg:text-[1.5em] text-[#84092a] leading-relaxed">
+<span className="font-bold italic">Want the full story?</span>{' '}
+<a
+href="#"
+className="text-blue-600 font-bold underline hover:text-blue-800 transition-colors"
+>
+Click here
+</a>{' '}
+to learn more about how I built my business from scratch, how CWS came into the picture & <span className="italic">how it can help you also...</span>
+</p>
+</div>
 
-        {/* Full Story Modal - Responsive */}
-        <AnimatePresence>
-          {isFlipped && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-              onClick={() => setIsFlipped(false)}
-            >
-              <motion.div
-                initial={{ scale: 0.95, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.95, y: 20 }}
-                transition={{ duration: 0.2 }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-white text-gray-800 p-6 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-xl max-w-3xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto border border-pink-200 w-full mx-4"
-              >
-                <div className="flex justify-between items-start mb-4 sm:mb-6">
-                  <h2 className="text-xl sm:text-2xl font-bold text-pink-600">The Full Story</h2>
-                  <button
-                    onClick={() => setIsFlipped(false)}
-                    className="text-gray-500 hover:text-gray-800 text-2xl sm:text-3xl transition-colors leading-none"
-                  >
-                    ×
-                  </button>
-                </div>
-                
-                <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-gray-700">
-                  <p className="text-base sm:text-lg leading-relaxed">
-                    <span className="font-bold text-lg sm:text-xl">Welcome!</span> My name is Britney and I'm glad you're here. Here's my journey...
-                  </p>
-                  <p className="leading-relaxed">
-                    After the pandemic shut down the place I worked for most of my 20s, I started with nothing but an iPhone and the drive to build reliable income and long-term stability—
-                    <span className="italic font-semibold"> on my own terms.</span>
-                  </p>
-                  <p className="leading-relaxed">
-                    Fast-forward 150+ UGC brand deals later, I realized content creation was just the beginning. I built a 
-                    <span className="font-bold text-purple-600"> 6-figure online business</span> from home, combining client work, UGC, and digital products to create multiple income streams.
-                  </p>
-                  <p className="leading-relaxed">
-                    Inside CWS, I teach exactly how I did it so you can land high-paying clients and grow a creative business that supports the life you actually want.
-                  </p>
-                </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
-                  transition={{ duration: 0.1 }}
-                  className="mt-6 sm:mt-8 w-full bg-pink-500 text-white py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg shadow-md hover:bg-pink-600 transition-colors"
-                >
-                  Start Your Journey Today →
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-};
+</div>
 
-export default FounderProfileCard;
+</div>
+</section>
+);
+}

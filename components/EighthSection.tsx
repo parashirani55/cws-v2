@@ -61,7 +61,7 @@ const ImageCardCarousel = () => {
             Community
           </h2>
           <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic font-medium mt-4 leading-relaxed text-left">
-            Meet our exclusive members and their journey.
+            Get the inside scoop from creators who’ve built, scaled, and leveled up...
           </p>
         </div>
 
