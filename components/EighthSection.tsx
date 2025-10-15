@@ -48,25 +48,29 @@ const ImageCardCarousel = () => {
   return (
     <div
       ref={containerRef}
-      className="w-screen h-screen px-[50px] bg-white flex items-center justify-center overflow-hidden"
+      className="w-screen h-screen bg-white flex items-center justify-center overflow-hidden 
+      px-2 sm:px-6 md:px-10 lg:px-[50px]" // ✅ Reduced padding for mobile/tablet
     >
-      <div className="max-w-[calc(100vw-100px)] mx-auto h-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-        {/* Left Side Title (40%) */}
-        <div className="w-full lg:w-2/5 lg:pr-6 flex flex-col justify-center">
-          <h2
-            className="font-Larken-Black-Italic text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.1] mb-6 text-left text-[#c67287]"
-          >
-            From the
-            <br />
-            Community
-          </h2>
-          <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 italic font-medium mt-4 leading-relaxed text-left">
+      <div
+        className="w-full h-full flex flex-col lg:flex-row items-center justify-center 
+        gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-[calc(100vw-1rem)] sm:max-w-[calc(100vw-50px)] lg:max-w-[calc(100vw-100px)] mx-auto"
+      >
+        {/* Left Side Title */}
+        <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left space-y-2 sm:space-y-3 md:space-y-4">
+<h2 className="font-Larken-Black-Italic text-[2.8rem] sm:text-[3rem] md:text-[4rem] lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.1] mb-2 sm:mb-4 text-[#c67287]">
+  From the
+  <br />
+  Community
+</h2>
+
+          
+          <p className="font-sans text-sm sm:text-base md:text-lg lg:text-2xl text-gray-900 italic font-medium mt-2 sm:mt-3 md:mt-4 leading-relaxed">
             Get the inside scoop from creators who’ve built, scaled, and leveled up...
           </p>
         </div>
 
-        {/* Right Side Image Carousel (60%) */}
-        <div className="relative w-full lg:w-3/5 h-[60vh] lg:h-[80vh] overflow-hidden">
+        {/* Right Side Image Carousel */}
+        <div className="relative w-full lg:w-3/5 h-[45vh] sm:h-[55vh] md:h-[65vh] lg:h-[80vh] overflow-hidden">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentCard.id}
@@ -78,28 +82,26 @@ const ImageCardCarousel = () => {
             >
               <div className="relative z-10 h-full flex items-center">
                 <div className="rounded-2xl overflow-hidden bg-transparent w-full h-full">
-                  <div className="p-0 h-full">
-                    <img
-                      src={currentCard.image}
-                      alt={`card-${currentCard.id}`}
-                      className="w-full h-full object-contain rounded-2xl pointer-events-none select-none"
-                      draggable={false}
-                    />
-                  </div>
+                  <img
+                    src={currentCard.image}
+                    alt={`card-${currentCard.id}`}
+                    className="w-full h-full object-contain rounded-2xl pointer-events-none select-none"
+                    draggable={false}
+                  />
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-center lg:justify-end gap-3 mt-6 absolute bottom-4 right-4">
+          <div className="flex justify-center lg:justify-end gap-2 sm:gap-3 mt-2 sm:mt-4 absolute bottom-3 sm:bottom-4 right-2 sm:right-4">
             <button
               onClick={prevSlide}
-              className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
               aria-label="Previous card"
             >
               <svg
-                className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-red-900 group-hover:text-white transition-colors"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -110,11 +112,11 @@ const ImageCardCarousel = () => {
             </button>
             <button
               onClick={nextSlide}
-              className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full border-2 sm:border-3 border-red-900 bg-white flex items-center justify-center hover:bg-red-900 transition-all duration-300 group active:scale-95"
               aria-label="Next card"
             >
               <svg
-                className="w-6 h-6 sm:w-7 sm:h-7 text-red-900 group-hover:text-white transition-colors"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-red-900 group-hover:text-white transition-colors"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -93,51 +93,50 @@ const MembershipBenefits = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-16 px-4">
+    <section className="w-full bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-visible">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8 sm:mb-12 px-2">
           <Image 
             src="/MemberShipBNBenefits.png" 
             alt="Membership Benefits" 
             width={1200}
             height={600}
-            className="max-w-2xl w-full h-auto"
+            className="w-full h-auto max-w-full sm:max-w-3xl object-contain"
+            priority
           />
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className={`group flex gap-5 p-6 rounded-2xl transition-all duration-500 ease-in-out ${
+              className={`group flex flex-col sm:flex-row gap-5 p-5 sm:p-6 rounded-2xl border border-transparent transition-all duration-500 ease-in-out bg-white ${
                 benefit.highlighted 
-                  ? 'hover:border-4 hover:border-red-900 hover:shadow-2xl hover:shadow-red-200' 
-                  : 'hover:border-4 hover:border-red-900 hover:shadow-2xl hover:shadow-red-100'
+                  ? 'hover:border-red-900 hover:shadow-2xl hover:shadow-red-200' 
+                  : 'hover:border-red-900 hover:shadow-2xl hover:shadow-red-100'
               }`}
             >
-              {/* Icon Circle */}
-              {/* Icon Circle */}
-<div className={`flex-shrink-0 w-24 h-24 ${benefit.bgColor} rounded-full flex items-center justify-center shadow-lg text-gray-700 transition-all duration-500 ease-in-out group-hover:shadow-2xl ${
-  benefit.highlighted ? 'group-hover:bg-purple-200' : 'group-hover:bg-pink-200'
-}`}>
-  <Image 
-    src={benefit.icon} 
-    alt={benefit.title} 
-    width={96} 
-    height={96} 
-    className="w-full h-full object-contain transition-all duration-500 ease-in-out group-hover:scale-110"
-  />
-</div>
+              {/* Icon */}
+              <div className={`flex-shrink-0 mx-auto sm:mx-0 w-20 h-20 sm:w-24 sm:h-24 ${benefit.bgColor} rounded-full flex items-center justify-center shadow-md transition-all duration-500 ease-in-out group-hover:shadow-2xl ${
+                benefit.highlighted ? 'group-hover:bg-purple-200' : 'group-hover:bg-pink-200'
+              }`}>
+                <Image 
+                  src={benefit.icon} 
+                  alt={benefit.title} 
+                  width={96} 
+                  height={96} 
+                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
 
-              
               {/* Content */}
-              <div className="flex-1">
-                <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900 transition-colors duration-300 group-hover:text-red-900">
+              <div className="text-center sm:text-left">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-gray-900 group-hover:text-red-900">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-700 text-base leading-relaxed transition-colors duration-300 group-hover:text-gray-900">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed group-hover:text-gray-900">
                   {benefit.description}
                 </p>
               </div>
@@ -147,12 +146,12 @@ const MembershipBenefits = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="bg-gradient-to-r from-red-900 to-red-800 hover:from-red-800 hover:to-red-700 text-white font-bold text-lg md:text-xl px-16 py-5 rounded-full shadow-xl transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl uppercase tracking-wide">
+          <button className="bg-gradient-to-r from-red-900 to-red-800 hover:from-red-800 hover:to-red-700 text-white font-bold text-base sm:text-lg md:text-xl px-10 sm:px-16 py-4 sm:py-5 rounded-full shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl uppercase tracking-wide">
             Yes, I Want All of This!
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
