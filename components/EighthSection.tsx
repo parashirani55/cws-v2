@@ -48,9 +48,9 @@ const ImageCardCarousel = () => {
   return (
     <div
       ref={containerRef}
-      className="w-screen h-screen px-5 bg-white flex items-center justify-center overflow-hidden"
+      className="w-screen h-screen px-[50px] bg-white flex items-center justify-center overflow-hidden"
     >
-      <div className="max-w-[calc(100vw-40px)] mx-auto h-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+      <div className="max-w-[calc(100vw-100px)] mx-auto h-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Left Side Title (40%) */}
         <div className="w-full lg:w-2/5 lg:pr-6 flex flex-col justify-center">
           <h2

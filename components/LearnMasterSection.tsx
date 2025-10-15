@@ -11,7 +11,7 @@ export default function LearnMasterSection() {
 
         {/* Left Image */}
         <div className="lg:w-1/4 flex justify-center lg:justify-start">
-          <div className="flex flex-col justify-end w-full h-full">
+          <div className="flex flex-col justify-center lg:justify-end w-full h-full items-center lg:items-start">
             <img
               src="/2.png"
               alt="Platform Instructor"
@@ -22,7 +22,7 @@ export default function LearnMasterSection() {
 
         {/* Center Text */}
         <div className="lg:flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-10 xl:px-12 space-y-4 text-black  lg:text-left py-10 lg:py-0">
-          <h2 className="text-[1.375rem] sm:text-[1.625rem] md:text-[1.875rem] lg:text-[2.25rem] xl:text-[2.5rem] 2xl:text-[2.75rem] leading-snug mb-8 lg:mb-12">
+          <h2 className="text-[1.375rem] sm:text-[1.625rem] md:text-[1.875rem] lg:text-[2.25rem] xl:text-[2.5rem] 2xl:text-[2.75rem] leading-snug mb-8 lg:mb-12 text-center lg:text-left">
             For those who know the game <br />
             and those <span className="italic font-light">ready</span> to learn it.<br />
             <span className="font-bold block mt-2">
@@ -30,7 +30,7 @@ export default function LearnMasterSection() {
             </span>
           </h2>
 
-          <div className="space-y-2 sm:space-y-3">
+          <div className="space-y-2 sm:space-y-3 text-center lg:text-left">
             <p className="text-[1.125rem] sm:text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] leading-tight max-w-4xl mx-auto">
               Learn how to turn your <span className="text-[#7b112a] font-bold">favourite parts of</span>
             </p>
@@ -47,11 +47,11 @@ export default function LearnMasterSection() {
         </div>
 
         {/* Right Image */}
-        <div className="lg:w-1/4 flex flex-col justify-start">
+        <div className="lg:w-1/5 flex justify-center lg:justify-end items-center lg:items-start">
           <img
             src="/camera/right.png"
             alt="Mobile Content Creation"
-            className="w-full h-full object-contain"
+            className="w-3/4 sm:w-2/5 md:w-2/5 lg:w-full h-auto object-contain"
           />
         </div>
 
