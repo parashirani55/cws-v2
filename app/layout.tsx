@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -17,13 +18,11 @@ export const metadata: Metadata = {
   title: "Creative Wealth Society",
   description: "Empowering professionals to grow their wealth and business",
   icons: {
-    icon: "/favicon.ico", // ✅ Path relative to /public
+    icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
