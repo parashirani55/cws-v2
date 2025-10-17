@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function CustomLayout() {
   return (
-    <section className="relative w-screen min-h-[90vh] overflow-hidden bg-[#f8f8f8] px-4 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12">
+    <section className="relative w-screen min-h-[90vh] overflow-hidden px-4 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12">
       {/* --- DESKTOP / LARGE SCREEN --- */}
       <div className="hidden lg:block">
         {/* MAC IMAGE RIGHT SIDE */}
