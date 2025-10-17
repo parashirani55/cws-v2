@@ -1,92 +1,101 @@
-'use client'
+'use client';
+import Image from 'next/image';
+
 export default function FounderStorySection() {
   return (
-    <section className="bg-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 lg:py-20 lg:px-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full bg-white py-4 sm:py-6 lg:py-10 px-3 sm:px-8 lg:px-20 overflow-visible">
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center">
 
-        {/* Top Section - Quote and Founder Image */}
-        <div className="relative mb-12 md:mb-16 lg:mb-0">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8">
+        {/* ===== Text Card (Tablet & Desktop) ===== */}
+        <div
+          className="relative w-full md:w-[90%] lg:w-[90%] rounded-2xl overflow-hidden hidden md:flex flex-col justify-center]"
+          style={{
+            backgroundImage: "url('/9/card-bg.webp')",
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: '#ffffff',
+            paddingTop: '15rem',
+            paddingBottom: '9rem',
+            paddingLeft: '8rem',
+            paddingRight: '3rem',
+            marginLeft: '-28rem', // pushed more to the left
 
-            {/* Quote Box */}
-            <div className="w-full lg:w-[60%] xl:w-[55%] relative z-10">
-              <div className="bg-[#F5EDE4] border-[3px] border-[#E8D7C3] rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 md:p-10 lg:p-12 relative">
-                {/* Large Quote Marks */}
-                <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-3 sm:-left-4 md:-left-6 text-[50px] sm:text-[70px] md:text-[90px] lg:text-[130px] text-[#E8D7C3] font-serif leading-none select-none">
-                  "
-                </div>
-                <div className="relative z-10 space-y-4 sm:space-y-6">
-                  <p className="text-gray-900 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] leading-relaxed">
-                    I built this platform from the challenges I faced over the years as a creator. When I started with UGC, I was on my own – no guidance, no support <span className="italic">and unsure if it would even work</span>. Then on top of that, agencies were taking huge cuts of brand deals while I did all the creative work. I knew there had to be an easier way, <span className="font-bold italic">so I created one for you.</span>
-                  </p>
-                  <p className="text-gray-900 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] leading-relaxed">
-                    CWS is an all-in-one space with real training, resources, opportunities and a supportive community, all designed to help you grow. <span className="font-bold italic">It's everything I wish I had when I started and exactly what creators need now.</span>
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 pt-2">
-                    <span
-                      className="text-[20px] sm:text-[24px] md:text-[30px] lg:text-[40px] text-gray-900 font-script animate-wavy"
-                      style={{ fontFamily: 'Brush Script MT, cursive' }}
-                    >
-                      -Britney
-                    </span>
-                    <span className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[28px]">💗</span>
-                    <span className="text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-gray-900 uppercase tracking-wider">
-                      Founder of CWS
-                    </span>
-                  </div>
-                </div>
-              </div>
+          }}
+        >
+          {/* Soft overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-white/25 to-transparent z-0 rounded-2xl"></div>
+
+          {/* Text Content */}
+          <div className="relative z-10 space-y-6 text-gray-900 text-left leading-[1.8] max-w-[95%]">
+            <p className="text-[19px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[30px]">
+              I built this platform from the challenges I faced over the years as a creator. When I started with UGC, I was on my own — no guidance, no support and unsure if it would even work. Then on top of that, agencies were taking huge cuts of brand deals while I did all the creative work. <strong>so I created one for you.</strong>
+            </p>
+            <p className="text-[19px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[30px]">
+              CWS is an all-in-one space with real training, resources, opportunities and a supportive community, all designed to help you grow. <strong>It’s everything I wish I had when I started and exactly what creators need now.</strong>
+            </p>
+
+            {/* Signature */}
+            <div className="relative w-full pt-6">
+              <Image
+                src="/9/sign.webp"
+                alt="Britney Signature"
+                width={380}
+                height={130}
+                draggable="false"
+                className="object-contain absolute right-0 bottom-0 sm:bottom-4 md:bottom-6 lg:bottom-8"
+              />
             </div>
-
-            {/* Founder Image */}
-            <div className="w-full lg:w-[40%] xl:w-[45%] flex justify-center lg:justify-end">
-              <div className="w-[180px] sm:w-[240px] md:w-[320px] lg:w-[420px] xl:w-[480px]">
-                <img
-                  src="/owner/image.png"
-                  alt="Britney - Founder of CWS"
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            </div>
-
           </div>
         </div>
 
-        {/* Dashboard Preview with Sneak Peek */}
-        <div className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-10 lg:gap-16">
-
-          {/* Sneak Peek Text + Arrow */}
-          <div className="flex flex-col items-center lg:items-end text-center lg:text-right relative z-20">
-            <img
-              src="SneakPeak.png"
-              alt="CWS Dashboard Preview"
-              className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto object-contain rounded-xl"
-            />
-          </div>
-
-          {/* Dashboard Image */}
-          <div className="relative flex justify-center w-full lg:w-[85%] xl:w-[90%] z-10">
-            <img
-              src="/owner/Dashboard-preview.png"
-              alt="CWS Dashboard Preview"
-              className="w-full h-auto object-contain rounded-2xl scale-100 sm:scale-105 md:scale-110 lg:scale-110"
-            />
-          </div>
-
+        {/* ===== Center Image (Dashboard) ===== */}
+        <div className="w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[90vw] mt-[-180px] sm:mt-[-200px] md:mt-[-500px] ml-[-5rem] relative z-50! flex justify-center">
+          <Image
+            src="/9/dashboard-owner.webp"
+            alt="Britney - Founder of CWS"
+            width={1100}
+            height={750}
+            className="w-full h-auto object-contain rounded-2xl"
+          />
         </div>
 
-        {/* Tailwind Wavy Animation */}
-        <style jsx>{`
-          @keyframes wavy {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-          }
-          .animate-wavy {
-            animation: wavy 1.5s ease-in-out infinite;
-          }
-        `}</style>
-
+        {/* ===== Mobile Layout (3 stacked images) ===== */}
+        <div className="block md:hidden w-full space-y-3 mt-8">
+          <Image
+            src="/9/mobile-1.webp"
+            alt="CWS Mobile Story 1"
+            width={800}
+            height={600}
+            className="w-full h-auto rounded-2xl object-cover"
+          />
+          <Image
+            src="/9/mobile-2.webp"
+            alt="CWS Mobile Story 2"
+            width={800}
+            height={600}
+            className="w-full h-auto rounded-2xl object-cover"
+          />
+          <Image
+            src="/9/mobile-3.webp"
+            alt="CWS Mobile Story 3"
+            width={800}
+            height={600}
+            className="w-full h-auto rounded-2xl object-cover"
+          />
+        </div>
       </div>
+
+      {/* Animation */}
+      <style jsx>{`
+        @keyframes wavy {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+        .animate-wavy {
+          animation: wavy 1.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }
